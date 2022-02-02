@@ -40,6 +40,10 @@ h3 {
     flex-direction: column;
 }
 
-form {
 
+
+#results {
+    height: 500px;
+    border: 1px solid black;
+    overflow: scroll;
 }

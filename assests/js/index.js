@@ -2,9 +2,7 @@
 const searchFoodBtn = document.querySelector("#search_food");
 const searchDrinkBtn = document.querySelector("#search_drinks");
 const apiKey = "b7dd85109d944e18aa81c263b5672588";
-const recipeFoodListEl = document.querySelector("#recipe_food");
-const recipeDrinkListEl = document.querySelector("#recipe_cocktails")
-
+const recipeFoodListEl = document.querySelector("#recipe_food")
 
 const getRecipeTitleAndImage = function (event) {
     event.preventDefault();
@@ -27,27 +25,6 @@ const getRecipeTitleAndImage = function (event) {
         });
 }
 
-// const getRecipeCocktails = function (event) {
-//     event.preventDefault();
-//     const alcohol = document.querySelector("#choices_drinks").value;
-//     const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`;
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(data => {
-//             for (let i = 0; i < data.drinks.length; i++) {
-//                 const listEl = document.createElement("p");
-//                 listEl.textContent = data.drinks[i].strDrink;
-//                 const imgEl = document.createElement("img")
-//                 imgEl.setAttribute("src", data.drinks[i].strDrinkThumb)
-//                 recipeDrinkListEl.appendChild(listEl);
-//                 recipeDrinkListEl.appendChild(imgEl);
-//             }
-//         })
-// }
-
-// searchFoodBtn.addEventListener("click", getRecipeTitleAndImage);
-// searchDrinkBtn.addEventListener("click", getRecipeCocktails);
-
 function getCuisine () {
     const foodItems = [];
     const checkedItems = document.getElementsByClassName("cuisine");
@@ -59,6 +36,7 @@ function getCuisine () {
     const foodChoices = foodItems.join(",");
     return foodChoices;
 }
+
 function getLifestyle () {
     let lifeStyleItems = [];
     let checkedItems = document.getElementsByClassName("lifestyle");
@@ -71,3 +49,4 @@ function getLifestyle () {
     return lifeStyle;
 }
 searchFoodBtn.addEventListener("click", getRecipeTitleAndImage)
+
