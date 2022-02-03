@@ -5,25 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assests/styles/styles.css">
 </head>
 <body>
-    <div>
-        <form action="">
-            <input type="text" id="choices_food">
-            <button type="submit" id="search_food">Let's Cook!</button>
-            <div>Here's your recipes: </div>
-            <div id="recipe_food"></div>
-        </form>
+    <div class="container columns">
+        <aside class="column mx-3 mt-3">
+            <div id="form">
+                <div class="block">
+                    <h1 class="title">FOOD</h1>
+                </div>
+                <div class="block">
+                    <h2 class="subtitle is-h2">CUISINE</h2>
+                </div>
+                <form action="">
+                    <div class="block" id="food_options">
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="mexican" value="mexican">
+                            Mexican
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="american" value="american">
+                            American
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="italian" value="italian">
+                            Italian
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="japanese" value="japanese">
+                            Japanese
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine"  id="thai" value="thai">
+                            Thai
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="chinese" value="chinese">
+                            Chinese
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="greek" value="greek">
+                            Greek
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="cuisine" id="mediterranean" value="mediterranean">
+                            Mediterranean
+                        </label>
+                    </div>
+                    <div class="block">
+                        <h2 class="subtitle is-h2">LIFESTYLE</h2>
+                    </div>
+                    <div class="block">
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
+                            Ketogenic
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
+                            Paleo
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
+                            Vegetarian
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
+                            Pescetarian
+                        </label>
+                        <label class="checkbox mx-3 pt-1">
+                            <input type="checkbox" class="lifestyle" id="glutenFree" value="glutenFree">
+                            Gluten Free
+                        </label>
+                    </div>
+                        <button type="submit" class="button is-small is-rounded" id="search_food"><h3>LETS COOK!</h3></button>
+                </form>
+            </div>
+        </aside>
     </div>
-    <hr>
-    <div>
-        <form action="">
-            <input type="text" id="choices_drinks">
-            <button type="submit" id="search_drinks">Let's drink!</button>
-            <div>Here's your recipes: </div>
+    <article class="column">
+        <div id="results">
             <div id="recipe_cocktails"></div>
-        </form>
+            <div id="recipe_food"></div>
+        </div>
+    </article>
+
+
     </div>
+    <!--end of container-->
+
     <script src="assests/js/index.js"></script>
 </body>
+
 </html>

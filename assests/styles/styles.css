@@ -1,0 +1,45 @@
+:root {
+    --primary: var (--primary);
+    --secondary: #9eb091;
+    --background:#fcfbf6;
+}
+
+html {
+    background-color: var(--background)
+  }
+
+.title {
+    color: var (--primary)
+} 
+
+.subtitle {
+    color: #9eb091;
+}
+
+.button {
+    background-color: var (--primary);
+     
+}
+
+.button:hover{
+    background-color: #9eb091;
+    border-color: var (--primary);
+}
+
+h3 {
+    color: #fcfbf6;
+}
+
+.checkbox {
+    color: var (--primary);
+    /* display: flex; */
+} 
+ 
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+
+}
