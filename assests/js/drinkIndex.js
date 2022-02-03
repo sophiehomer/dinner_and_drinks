@@ -1,6 +1,6 @@
 "use strict";
-const searchDrinkBtn = document.querySelector("#search_food")
-const recipeDrinkListEl = document.querySelector("#recipe_drink")
+const searchDrinkBtn = document.querySelector("#search_food");
+const recipeDrinkListEl = document.querySelector("#recipe_drink");
 
 const getRecipeCocktails = function (event) {
     event.preventDefault();
@@ -23,8 +23,8 @@ const getRecipeCocktails = function (event) {
                 // create message body. and place image
                 const messageBody = document.createElement("div");
                 messageBody.className="message-body";
-                const imgEl = document.createElement("img")
-                imgEl.className = "image"
+                const imgEl = document.createElement("img");
+                imgEl.className = "image";
                 imgEl.setAttribute("src", data.drinks[i].strDrinkThumb);
                 messageBody.appendChild(imgEl);
 
