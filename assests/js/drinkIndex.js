@@ -1,6 +1,7 @@
 "use strict";
 const searchDrinkBtn = document.querySelector("#search_food");
 const recipeDrinkListEl = document.querySelector("#recipe_drink");
+const resultsEl = document.querySelector("#results")
 
 const getRecipeCocktails = function (event) {
     event.preventDefault();
@@ -10,28 +11,30 @@ const getRecipeCocktails = function (event) {
         .then(res => res.json())
         .then(data => {
             for (let i = 0; i < data.drinks.length; i++) {
-                // create article, message-header, and append title
-                const articleEl = document.createElement("article");
-                articleEl.className = "message";
-                const headerEl = document.createElement("div");
-                articleEl.appendChild(headerEl);
-                headerEl.className = "message-header";
+                // create message
+                const messageEl = document.createElement("article");
+                messageEl.className = "message";
+                // create message header element and attach to message element
+                const messageHeaderEl = document.createElement("div");
+                messageHeaderEl.className ="message-header";
+                // create title for message element and attach to header
                 const title = document.createElement("p");
                 title.textContent = data.drinks[i].strDrink;
-                // append title
-                headerEl.appendChild(title);
-                // create message body. and place image
-                const messageBody = document.createElement("div");
-                messageBody.className="message-body";
-                const imgEl = document.createElement("img");
-                imgEl.className = "image";
-                imgEl.setAttribute("src", data.drinks[i].strDrinkThumb);
-                messageBody.appendChild(imgEl);
-
-
-
-                recipeDrinkListEl.appendChild(title);
-                recipeDrinkListEl.appendChild(imgEl);
+                messageHeaderEl.appendChild(title);
+                messageEl.appendChild(messageHeaderEl);
+                
+                // Add body to card
+                const messageBodyEl = document.createElement("div");
+                messageBodyEl.className = "message-body"
+                // create image
+                const imageEl = document.createElement("img");
+                imageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
+                imageEl.className = "image"; 
+                messageBodyEl.appendChild(imageEl);
+                messageEl.appendChild(messageBodyEl);
+                
+                // append the whole thing
+                resultsEl.appendChild(messageEl);
             }
         })
 }
