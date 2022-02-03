@@ -1,9 +1,15 @@
+:root {
+    --primary: var (--primary);
+    --secondary: #9eb091;
+    --background:#fcfbf6;
+}
+
 html {
-    background-color:#fcfbf6;
+    background-color: var(--background)
   }
 
 .title {
-    color: #45523e;
+    color: var (--primary)
 } 
 
 .subtitle {
@@ -11,13 +17,13 @@ html {
 }
 
 .button {
-    background-color: #45523e;
+    background-color: var (--primary);
      
 }
 
 .button:hover{
     background-color: #9eb091;
-    border-color: #45523e;
+    border-color: var (--primary);
 }
 
 h3 {
@@ -25,11 +31,15 @@ h3 {
 }
 
 .checkbox {
-    color: #45523e;
+    color: var (--primary);
     /* display: flex; */
 } 
  
 .block {
     display: flex;
     flex-direction: column;
+}
+
+form {
+
 }
