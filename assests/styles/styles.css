@@ -1,0 +1,35 @@
+html {
+    background-color:#fcfbf6;
+  }
+
+.title {
+    color: #45523e;
+} 
+
+.subtitle {
+    color: #9eb091;
+}
+
+.button {
+    background-color: #45523e;
+     
+}
+
+.button:hover{
+    background-color: #9eb091;
+    border-color: #45523e;
+}
+
+h3 {
+    color: #fcfbf6;
+}
+
+.checkbox {
+    color: #45523e;
+    /* display: flex; */
+} 
+ 
+.block {
+    display: flex;
+    flex-direction: column;
+}
