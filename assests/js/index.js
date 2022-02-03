@@ -24,7 +24,6 @@ const getRecipeTitleAndImage = function (event) {
             }
         });
 }
-
 function getCuisine () {
     const foodItems = [];
     const checkedItems = document.getElementsByClassName("cuisine");
@@ -36,7 +35,6 @@ function getCuisine () {
     const foodChoices = foodItems.join(",");
     return foodChoices;
 }
-
 function getLifestyle () {
     let lifeStyleItems = [];
     let checkedItems = document.getElementsByClassName("lifestyle");

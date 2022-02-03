@@ -10,11 +10,27 @@ const getRecipeCocktails = function (event) {
         .then(res => res.json())
         .then(data => {
             for (let i = 0; i < data.drinks.length; i++) {
-                const listEl = document.createElement("p");
-                listEl.textContent = data.drinks[i].strDrink;
+                // create article, message-header, and append title
+                const articleEl = document.createElement("article");
+                articleEl.className = "message";
+                const headerEl = document.createElement("div");
+                articleEl.appendChild(headerEl);
+                headerEl.className = "message-header";
+                const title = document.createElement("p");
+                title.textContent = data.drinks[i].strDrink;
+                // append title
+                headerEl.appendChild(title);
+                // create message body. and place image
+                const messageBody = document.createElement("div");
+                messageBody.className="message-body";
                 const imgEl = document.createElement("img")
-                imgEl.setAttribute("src", data.drinks[i].strDrinkThumb)
-                recipeDrinkListEl.appendChild(listEl);
+                imgEl.className = "image"
+                imgEl.setAttribute("src", data.drinks[i].strDrinkThumb);
+                messageBody.appendChild(imgEl);
+
+
+
+                recipeDrinkListEl.appendChild(title);
                 recipeDrinkListEl.appendChild(imgEl);
             }
         })
