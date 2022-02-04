@@ -11,6 +11,7 @@ const getRecipeCocktails = function (event) {
         .then(res => res.json())
         .then(data => {
             // cycle through data and display drinks as cards. 
+            console.log(data)
             for (let i = 0; i < data.drinks.length; i++) {
                 
                 
@@ -37,8 +38,10 @@ const getRecipeCocktails = function (event) {
                 
                 // get drink Id and store ingredients and measurements in an 2-d array
                 const drinkId = data.drinks[i].idDrink
+            
+
                 const ingredientMeasurementList = getIngredientMeasurement(drinkId);
-                console.log(ingredientMeasurementList.length);
+                console.log(ingredientMeasurementList);
                 // for (let i = 0; i < ingredientMeasurementList[0].length; i++) {
                 //     const ingredient = ingredientMeasurementList[0][i];
                 //     const measurement = ingredientMeasurementList[1][i];
@@ -59,13 +62,14 @@ const getRecipeCocktails = function (event) {
 }
 
 const getIngredientMeasurement = function (id) {
-    let ingredient = [];
-    let measurement = [];
-    let ingredientMeasurement = [];
+    const ingredient = [];
+    const measurement = [];
+    const ingredientMeasurement = [];
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(url)
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             const drinkObject = data.drinks[0]
             for (const [key, value] of Object.entries(drinkObject)) {
                 if (key.includes("strIngredient") && value !== null && value !== "") {
@@ -80,8 +84,12 @@ const getIngredientMeasurement = function (id) {
             ingredientMeasurement.push(ingredient);
             ingredientMeasurement.push(measurement);
             console.log(ingredientMeasurement);
-        })
             return ingredientMeasurement;
+        })
+}
+
+const getRecipeInstructions = function () {
+
 }
 
 const getAlcohol = function () {
@@ -97,3 +105,7 @@ const getAlcohol = function () {
 }
 
 searchDrinkBtn.addEventListener("click", getRecipeCocktails);
+
+
+
+// line 86-87 and 43 44
