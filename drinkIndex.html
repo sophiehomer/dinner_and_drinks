@@ -12,47 +12,43 @@
 </head>
 
 <body>
+    <header>
+        <h1>COCKTAILS</h1>
+   </header>
     <div class="container columns">
         <aside class="column mx-3 mt-3">
             <div id="form">
-                <div class="block">
-                    <h1 class="title">Drinks</h1>
-                </div>
-                <div class="block">
-                    <h2 class="subtitle is-underlined is-h2">Alcohol</h2>
-                </div>
+                <div class="container-color">
                 <form action="">
                     <div class="block" id="food_options">
-                        <label class="checkbox mx-3">
+                        <label class="checkbox mx-3 pt-4">
                             <input type="checkbox" class="alcohol" id="tequila" value="tequila">
                             Tequila
                         </label>
-                        <label class="checkbox mx-3">
+                        <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="alcohol" id="whiskey" value="whiskey">
                             Whiskey
                         </label>
-                        <label class="checkboxmx-3">
+                        <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="alcohol" id="gin" value="gin">
                             Gin
                         </label>
-                    </div>
-                    <div class="block">
-                        <label class="checkbox mx-3">
+                    
+                        <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="alcohol" id="scotch" value="scotch">
                             Scotch
                         </label>
-                        <label class="checkbox mx-3">
+                        <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="alcohol"  id="vodka" value="vodka">
                             Vodka
                         </label>
-                        <label class="checkbox mx-3">
+                        <label class="checkbox mx-3 pt-3 mb-4">
                             <input type="checkbox" class="alcohol" id="rum" value="rum">
                             Rum
                         </label>
                     </div>
-                    <div class="block">
-                        <button type="submit" class="button is-small is-primary" id="search_food">Let's Drink!</button>
                     </div>
+                        <button type="submit" class="button is-medium mt-4" id="search_food"><h3>LET'S DRINK!</h3></button>
                 </form>
             </div>
         </aside>
@@ -65,8 +61,12 @@
         </div>
     </div> <!--end of container-->
     <div class="block mx-4">
-        <a href="index.html"><button id="to_drinks" class="button is-warning">Go to recipes</button></a>
+        <a href="index.html"><button id="food-btn" class="button is-medium"><h3>FOOD</h3></button></a>
     </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <h5></h5>
+    </footer>
 
     <script src="assests/js/drinkIndex.js"></script>
 </body>
