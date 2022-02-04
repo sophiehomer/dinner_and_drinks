@@ -1,39 +1,95 @@
 "use strict";
 const searchDrinkBtn = document.querySelector("#search_food");
 const recipeDrinkListEl = document.querySelector("#recipe_drink");
+const resultsEl = document.querySelector("#results")
 
 const getRecipeCocktails = function (event) {
     event.preventDefault();
     const alcohol = getAlcohol();
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`;
+    const urlByName = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`
+    fetch(urlByName)
+        .then(res => res.json())
+        .then(data => {
+            // cycle through data and display drinks as cards. 
+            console.log(data)
+            for (let i = 0; i < data.drinks.length; i++) {
+                
+                
+                // create Message
+                const messageEl = document.createElement("article");
+                messageEl.className = "message";
+                // create message header element and attach to message element
+                const messageHeaderEl = document.createElement("div");
+                messageHeaderEl.className = "message-header";
+                // create title for message element and attach to header
+                const title = document.createElement("p");
+                title.textContent = data.drinks[i].strDrink;
+                messageHeaderEl.appendChild(title);
+                messageEl.appendChild(messageHeaderEl);
+                
+                // Add body to card
+                const messageBodyEl = document.createElement("div");
+                messageBodyEl.className = "message-body columns"
+                // create image
+                const imageEl = document.createElement("img");
+                imageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
+                imageEl.className = "image column";
+                messageBodyEl.appendChild(imageEl);
+                
+                // get drink Id and store ingredients and measurements in an 2-d array
+                const drinkId = data.drinks[i].idDrink
+            
+
+                const ingredientMeasurementList = getIngredientMeasurement(drinkId);
+                console.log(ingredientMeasurementList);
+                // for (let i = 0; i < ingredientMeasurementList[0].length; i++) {
+                //     const ingredient = ingredientMeasurementList[0][i];
+                //     const measurement = ingredientMeasurementList[1][i];
+                    
+                //     const ingredientMeasurementEl = document.createElement("p")
+                //     ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
+                //     console.log(ingredientMeasurementEl)
+                //     ingredientMeasurementEl.className = "column";
+                //     messageBodyEl.appendChild(ingredientMeasurementEl);
+                // }
+                messageEl.appendChild(messageBodyEl);
+
+
+                // append the card to html whole thing
+                resultsEl.appendChild(messageEl);
+            }
+        })
+}
+
+const getIngredientMeasurement = function (id) {
+    const ingredient = [];
+    const measurement = [];
+    const ingredientMeasurement = [];
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            for (let i = 0; i < data.drinks.length; i++) {
-                // create article, message-header, and append title
-                const articleEl = document.createElement("article");
-                articleEl.className = "message";
-                const headerEl = document.createElement("div");
-                articleEl.appendChild(headerEl);
-                headerEl.className = "message-header";
-                const title = document.createElement("p");
-                title.textContent = data.drinks[i].strDrink;
-                // append title
-                headerEl.appendChild(title);
-                // create message body. and place image
-                const messageBody = document.createElement("div");
-                messageBody.className="message-body";
-                const imgEl = document.createElement("img");
-                imgEl.className = "image";
-                imgEl.setAttribute("src", data.drinks[i].strDrinkThumb);
-                messageBody.appendChild(imgEl);
-
-
-
-                recipeDrinkListEl.appendChild(title);
-                recipeDrinkListEl.appendChild(imgEl);
+            console.log(data)
+            const drinkObject = data.drinks[0]
+            for (const [key, value] of Object.entries(drinkObject)) {
+                if (key.includes("strIngredient") && value !== null && value !== "") {
+                    ingredient.push(value);
+                }
             }
+            for (const [key, value] of Object.entries(drinkObject)) {
+                if (key.includes("strMeasure") && value !== null && value !== "") {
+                    measurement.push(value)
+                }
+            }
+            ingredientMeasurement.push(ingredient);
+            ingredientMeasurement.push(measurement);
+            console.log(ingredientMeasurement);
+            return ingredientMeasurement;
         })
+}
+
+const getRecipeInstructions = function () {
+
 }
 
 const getAlcohol = function () {
@@ -49,3 +105,7 @@ const getAlcohol = function () {
 }
 
 searchDrinkBtn.addEventListener("click", getRecipeCocktails);
+
+
+
+// line 86-87 and 43 44
