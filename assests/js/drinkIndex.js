@@ -9,12 +9,10 @@ const getRecipeCocktails = function (event) {
     const urlByName = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`
     fetch(urlByName)
         .then(res => res.json())
-        .then(data => {
+        .then(async function (data) {
             // cycle through data and display drinks as cards. 
             console.log(data)
             for (let i = 0; i < data.drinks.length; i++) {
-                
-                
                 // create Message
                 const messageEl = document.createElement("article");
                 messageEl.className = "message";
@@ -29,67 +27,98 @@ const getRecipeCocktails = function (event) {
                 
                 // Add body to card
                 const messageBodyEl = document.createElement("div");
-                messageBodyEl.className = "message-body columns"
+                messageBodyEl.classList.add("message-body")
                 // create image
+                const imageDivEl = document.createElement("div");
+                imageDivEl.classList.add("has-text-centered");
+                const figureEl = document.createElement("figure");
+                figureEl.classList.add("image", "is-128x128", "is-inline-block")
+
                 const imageEl = document.createElement("img");
                 imageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
-                imageEl.className = "image column";
-                messageBodyEl.appendChild(imageEl);
-                
-                // get drink Id and store ingredients and measurements in an 2-d array
-                const drinkId = data.drinks[i].idDrink
-            
 
-                const ingredientMeasurementList = getIngredientMeasurement(drinkId);
-                console.log(ingredientMeasurementList);
-                // for (let i = 0; i < ingredientMeasurementList[0].length; i++) {
-                //     const ingredient = ingredientMeasurementList[0][i];
-                //     const measurement = ingredientMeasurementList[1][i];
-                    
-                //     const ingredientMeasurementEl = document.createElement("p")
-                //     ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
-                //     console.log(ingredientMeasurementEl)
-                //     ingredientMeasurementEl.className = "column";
-                //     messageBodyEl.appendChild(ingredientMeasurementEl);
-                // }
+                figureEl.appendChild(imageEl);
+                imageDivEl.appendChild(figureEl);                
+
+                // imageEl.classList.add("image", "is-128x128", );
+
+                messageBodyEl.appendChild(imageDivEl);
+                
+                // Create and Display Ingredients
+                    // Title
+                const ingredientsEl = document.createElement("div");
+                const ingredientTitle = document.createElement("h2");
+                ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+                ingredientTitle.textContent = "Ingredients";
+                ingredientsEl.appendChild(ingredientTitle);
+                    // Instructions
+                const drinkId = await data.drinks[i].idDrink
+                const ingredientMeasurementList = await getIngredientMeasurement(drinkId);
+                for (let i = 0; i < ingredientMeasurementList[0].length; i++) {
+                    const ingredient = ingredientMeasurementList[0][i];
+                    const measurement = ingredientMeasurementList[1][i];
+                    const ingredientMeasurementEl = document.createElement("p")
+                    ingredientMeasurementEl.className = "level-item";
+                    ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
+                    console.log(ingredientMeasurementEl);
+                    ingredientsEl.appendChild(ingredientMeasurementEl);
+                }
+                messageBodyEl.appendChild(ingredientsEl)
+                // Create and Display Instructions 
+                    // Title
+                const instructionEl = document.createElement("div");
+                const instructionTitle = document.createElement("h2");
+                instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+                instructionTitle.textContent = "Instructions";
+                instructionEl.appendChild(instructionTitle);
+                    // Instructions
+                const recipeInstructions = await getInstructions(drinkId);
+                const instructions = document.createElement("p");
+                // instructions.classList.add("column");
+                instructions.textContent = recipeInstructions;
+                instructionEl.appendChild(instructions)
+                messageBodyEl.appendChild(instructionEl);
+                
+                // append teh messageBody to the Message
                 messageEl.appendChild(messageBodyEl);
 
-
-                // append the card to html whole thing
+                // append the whole Message to HTML
                 resultsEl.appendChild(messageEl);
             }
         })
 }
 
-const getIngredientMeasurement = function (id) {
+async function getIngredientMeasurement (id) {
     const ingredient = [];
     const measurement = [];
     const ingredientMeasurement = [];
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            const drinkObject = data.drinks[0]
-            for (const [key, value] of Object.entries(drinkObject)) {
-                if (key.includes("strIngredient") && value !== null && value !== "") {
-                    ingredient.push(value);
-                }
-            }
-            for (const [key, value] of Object.entries(drinkObject)) {
-                if (key.includes("strMeasure") && value !== null && value !== "") {
-                    measurement.push(value)
-                }
-            }
-            ingredientMeasurement.push(ingredient);
-            ingredientMeasurement.push(measurement);
-            console.log(ingredientMeasurement);
-            return ingredientMeasurement;
-        })
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const data = await response.json();
+    console.log(data);
+    console.log(data.drinks[0].strInstructions);
+    const drinkObject = data.drinks[0]
+    for (const [key, value] of Object.entries(drinkObject)) {
+        if (key.includes("strIngredient") && value !== null && value !== "") {
+            ingredient.push(value);
+        }
+    }
+    for (const [key, value] of Object.entries(drinkObject)) {
+        if (key.includes("strMeasure") && value !== null && value !== "") {
+            measurement.push(value)
+        }
+    }
+    ingredientMeasurement.push(ingredient);
+    ingredientMeasurement.push(measurement);
+    return ingredientMeasurement;
 }
 
-const getRecipeInstructions = function () {
-
+async function getInstructions (id) {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const data = await response.json();
+    console.log(data);
+    console.log(data.drinks[0].strInstructions);
+    const instructions = data.drinks[0].strInstructions;
+    return instructions;
 }
 
 const getAlcohol = function () {
@@ -105,7 +134,3 @@ const getAlcohol = function () {
 }
 
 searchDrinkBtn.addEventListener("click", getRecipeCocktails);
-
-
-
-// line 86-87 and 43 44
