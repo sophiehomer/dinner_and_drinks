@@ -1,7 +1,7 @@
 "use strict";
 const searchFoodBtn = document.querySelector("#search_food");
 const searchDrinkBtn = document.querySelector("#search_drinks");
-const apiKey = "f6b6580a6e2948e796ce381d7a3cb53d";
+const apiKey = "b7dd85109d944e18aa81c263b5672588";
 const recipeFoodListEl = document.querySelector("#results")
 
 const getRecipeTitleAndImage =  function (event) {
@@ -12,6 +12,7 @@ const getRecipeTitleAndImage =  function (event) {
     fetch(url)
         .then(res => res.json())
         .then(async function (data) {
+            console.log(data)
             for (let i = 0; i < data.results.length; i++){
                 // Create article element
                 const articleEl = document.createElement("article");
@@ -51,6 +52,21 @@ const getRecipeTitleAndImage =  function (event) {
                 }
                 messageBodyEl.appendChild(ingredientsEl);
                     // Create and display instructions
+                const instructionEl = document.createElement("div");
+                const instructionTitle = document.createElement("h2");
+                instructionTitle.className = "is-sized-5 is-underlined level-item mt-3";
+                instructionTitle.textContent = "Instructions";
+                instructionEl.appendChild(instructionTitle);
+                const instructions = await getInstructions(recipeId);
+                for (let i = 0; i < instructions.length; i++) {
+                    const step = document.createElement("p");
+                    step.className = "level-item has-text-centered";
+                    step.textContent = `${i+1}. ${instructions[i]}`;
+                    instructionEl.appendChild(step);
+                }
+                messageBodyEl.appendChild(instructionEl);
+
+
 
 
                 //append article to element in HTML
@@ -92,9 +108,25 @@ async function getIngredient (id) {
         const ingredientMeasurement = await ingredientName + ": " + measurement;
         ingredientArray.push(ingredientMeasurement);
     }
-    console.log(ingredientArray)
     return ingredientArray;
 }
+
+
+
+async function getInstructions (id) {
+    const instructionArray = [];
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`);
+    const data = await response.json();
+    console.log(data)
+    console.log(data[0].steps.length)
+    for (let i = 0; i < data[0].steps.length; i++) {
+        instructionArray.push(data[0].steps[i].step);
+    }
+    return instructionArray;
+}
+
+
+
 
 searchFoodBtn.addEventListener("click", getRecipeTitleAndImage)
 
