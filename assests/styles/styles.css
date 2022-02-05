@@ -1,59 +1,5 @@
-/* FOOD STYLES */
 html {
     background-color: #fff;  
-}
-
-header {
- display: flex;
- justify-content: center;
-  margin: 20px 0px;
-  padding: 20px 35px;
-  background-color: rgb(14, 12, 12);  
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 5;
-}
-
-h1 {
- color:  #fff; 
- font-size: 30px;
- font-family: Didot, sans-serif;
- font-weight: bold;
-} 
-
-.button {
- background-color: rgb(14, 12, 12);
- font-weight: bold;
- margin-left: 30px;  
-}
-
-.button:hover{
- transform: scale(1.1);
-}
-
-h3 {
- font-family: calibri; 
- color: #fff;
- font-size: 14px;
-}
-
-.checkbox {
- color: rgb(14, 12, 12);
- font-family: calibri; 
-} 
- 
-.block {
- display: flex;
- flex-direction: column;
- margin-left: 10px;
-}
-
-.container-color {
-    background-color: #fff;
-    border: 2px solid rgb(14, 12, 12);
-    margin-right: 225px; 
-    margin-left: 30px;
 }
 
 #results {
@@ -62,11 +8,25 @@ h3 {
     overflow: scroll;
 }
 
-.footer {
- background-color: rgb(14, 12, 12);
-}
-/* DRINKS STYLES */
+nav{
+    background-color: black;
 
-#food-btn {
-    margin-top: 100px;
+}
+
+.title {
+    color: #ffff;
+    font-family: Didot, sans-serif;
+}
+
+nav h1 {
+    color: #ffff;
+    font-family: calibri, sans-serif;
+}
+
+.footer {
+    background-color: black;
+}
+
+.checkbox {
+font-family: calibri, sans-serif;
 }

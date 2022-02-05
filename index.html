@@ -13,15 +13,23 @@
 
 <body>
      <!-- Navigation -->
-     <header>
-         <h1>RECIPES</h1>
-    </header>
+   <div class="block">
+       <nav class="nav">
+           <div class="navbar-brand pl-5 pt-5">
+         <h1 class="title">RECIPES</h1>
+           </div>
+           <div class= "nav-right">
+               <a href="" class="navbar-end pr-5"><h1 class="home">HOME</h1></a>
+               <a href="" class="navbar-end pb-5 pr-5"><h1 class="cocktails">COCKTAILS</h1></a>
+           </div>
+        </nav>
+   </div>
     <div class="container columns">
-        <aside class="column mx-3">
-            <div id="form">
+        <aside class="column is-vcentered mx-3">
+            <div id="form" class="column is-vcentered">
                 <div class="container-color">
                 <form action="#">
-                    <div class="block" id="food_options">
+                    <div id="food_options">
                         <label class="checkbox mx-3 mt-5">
                             <input type="checkbox" class="cuisine" id="mexican" value="mexican">
                             Mexican
@@ -38,10 +46,7 @@
                             <input type="checkbox" class="cuisine" id="japanese" value="japanese">
                             Japanese
                         </label>
-                        <label class="checkbox mx-3 pt-3">
-                            <input type="checkbox" class="cuisine"  id="thai" value="thai">
-                            Thai
-                        </label>
+                        <div class="block">
                         <label class="checkbox mx-3 pt-2">
                             <input type="checkbox" class="cuisine" id="chinese" value="chinese">
                             Chinese
@@ -51,9 +56,15 @@
                             Greek
                         </label>
                         <label class="checkbox mx-3 pt-3">
+                            <input type="checkbox" class="cuisine"  id="thai" value="thai">
+                            Thai
+                        </label>
+                        <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="cuisine" id="mediterranean" value="mediterranean">
                             Mediterranean
                         </label>
+                        
+                    </div>
                         <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
                             Ketogenic
@@ -63,22 +74,24 @@
                             Paleo
                         </label>
                         <label class="checkbox mx-3 pt-3">
-                            <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
-                            Vegan
+                            <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
+                            Pescetarian
                         </label>
+                        
                         <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
                             Vegetarian
                         </label>
                         <label class="checkbox mx-3 pt-3">
-                            <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
-                            Pescetarian
+                            <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
+                            Vegan
                         </label>
                         <label class="checkbox mx-3 pt-3 mb-4">
                             <input type="checkbox" class="lifestyle mb-4" id="glutenFree" value="glutenFree">
                             Gluten Free
                         </label>
                     </div>
+        
                 </div>
                         <button type="submit" class="button is-medium mt-4" id="search_food"><h3>LETS COOK!</h3></button>
                 </form>
