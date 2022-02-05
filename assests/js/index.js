@@ -38,11 +38,12 @@ const getRecipeTitleAndImage =  function (event) {
                     // Create and display ingredients
                 const ingredientsEl = document.createElement("div");
                 const ingredientTitle = document.createElement("h2");
-                ingredientTitle.className = "is-sized-5 is-underlined level-item";
+                ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
                 ingredientTitle.textContent = "Ingredients";
                 ingredientsEl.appendChild(ingredientTitle);
                 const recipeId = data.results[i].id
-                const ingredients = await getIngredient(recipeId)
+
+                const ingredients = await getIngredient(recipeId);
                 console.log(ingredients.length);
                 for (let i = 0; i < ingredients.length; i ++) {
                     const ingredient = document.createElement("p");
@@ -54,13 +55,13 @@ const getRecipeTitleAndImage =  function (event) {
                     // Create and display instructions
                 const instructionEl = document.createElement("div");
                 const instructionTitle = document.createElement("h2");
-                instructionTitle.className = "is-sized-5 is-underlined level-item mt-3";
+                instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
                 instructionTitle.textContent = "Instructions";
                 instructionEl.appendChild(instructionTitle);
                 const instructions = await getInstructions(recipeId);
                 for (let i = 0; i < instructions.length; i++) {
                     const step = document.createElement("p");
-                    step.className = "level-item has-text-centered";
+                    step.classList.add("level-item", "has-text-centered")
                     step.textContent = `${i+1}. ${instructions[i]}`;
                     instructionEl.appendChild(step);
                 }
