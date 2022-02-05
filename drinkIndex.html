@@ -18,6 +18,39 @@
     <div class="container columns">
         <aside class="column mx-3 mt-3">
             <div id="form">
+
+                <div class="food-container">
+                <form action="">
+                    <div class="block" id="food_options">
+                        <label class="checkbox mx-3 pt-4">
+                            <input type="checkbox" class="alcohol" id="tequila" value="tequila">
+                            Tequila
+                        </label>
+                        <label class="checkbox mx-3 pt-3">
+                            <input type="checkbox" class="alcohol" id="whiskey" value="whiskey">
+                            Whiskey
+                        </label>
+                        <label class="checkbox mx-3 pt-3">
+                            <input type="checkbox" class="alcohol" id="gin" value="gin">
+                            Gin
+                        </label>
+                    
+                        <label class="checkbox mx-3 pt-3">
+                            <input type="checkbox" class="alcohol" id="scotch" value="scotch">
+                            Scotch
+                        </label>
+                        <label class="checkbox mx-3 pt-3">
+                            <input type="checkbox" class="alcohol"  id="vodka" value="vodka">
+                            Vodka
+                        </label>
+                        <label class="checkbox mx-3 pt-3 mb-4">
+                            <input type="checkbox" class="alcohol" id="rum" value="rum">
+                            Rum
+                        </label>
+                    </div>
+                    </div>
+                        <button type="submit" class="button is-medium mt-4" id="search_drinks"><h3>LET'S DRINK!</h3></button>
+
                 <div class="container-color">
                     <form action="">
                         <div class="block" id="food_options">
@@ -51,11 +84,19 @@
                 <button type="submit" class="button is-medium mt-4" id="search_food">
                     <h3>LET'S DRINK!</h3>
                 </button>
+
                 </form>
             </div>
         </aside>
         <div id="results" class="column mt-6">
-            
+
+            <article>
+                <div id="results">
+                    <div id="recipe_drinks"></div>
+                </div>
+            </article>
+
+
         </div>
     </div>
     <!--end of container-->
@@ -69,7 +110,6 @@
         <h5></h5>
     </footer>
 
-    <script src="assests/js/drinkIndex.js"></script>
+<script src="assests/js/drinkIndex.js"></script>
 </body>
-
 </html>
