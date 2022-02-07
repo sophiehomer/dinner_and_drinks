@@ -92,7 +92,7 @@ async function makeCard (data, attachingEl) {
         articleEl.className = "message";
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div"); 
-        headerEl.className = "message-header";
+        headerEl.classList.add("message-header", "has-background-black");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
@@ -146,7 +146,7 @@ async function makeCard (data, attachingEl) {
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
-        buttonEl.classList.add("button", "is-small");
+        buttonEl.classList.add("button", "is-small", "favorites");
         buttonEl.textContent = "Add to Favorites ";
 
         buttonEl.addEventListener("click", saveLocalStorage)

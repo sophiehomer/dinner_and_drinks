@@ -1,5 +1,6 @@
 "use strict";
-const favoritesEL = document.querySelector("#favoriteDrinks");
+const favoritesDrinksEL = document.querySelector("#favorite_drinks");
+const favoriteFoodEl = document.querySelector("#favorite_food");
 const apiKey = "b7dd85109d944e18aa81c263b5672588";
 
 const loadLocalStorageDrink = async function () {
@@ -20,7 +21,7 @@ const loadLocalStorageDrink = async function () {
             } else {
                 const drinkInfo = await getDrinkInfo(drinkName);
                 console.log(drinkInfo)
-                makeCardDrink(drinkInfo, favoritesEL);
+                makeCardDrink(drinkInfo, favoritesDrinksEL);
             }
         }
     }
@@ -124,6 +125,7 @@ async function makeCardDrink(data, attachingEl) {
         
     }
 }
+
 function deleteLocalStorageDrink () {
         //  Get name of drink
         const message = this.parentNode.parentNode.parentNode;
@@ -136,8 +138,8 @@ function deleteLocalStorageDrink () {
         console.log(updatedDrinks)
         localStorage.setItem("drink", updatedDrinks);
         message.remove();
-
 }
+
 // Get ingredients and measurements
 async function getIngredientMeasurementDrink (id) {
     const ingredient = [];
@@ -188,7 +190,7 @@ const loadLocalStorageFood = async function () {
             } else {
                 const dishInfo = await getDishInfo(dishName);
                 console.log(dishInfo)
-                await makeCardFood(dishInfo, favoritesEL);
+                await makeCardFood(dishInfo, favoriteFoodEl);
             }
         }
     }
@@ -202,7 +204,7 @@ async function makeCardFood (data, attachingEl) {
         articleEl.className = "message";
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div"); 
-        headerEl.className = "message-header";
+        headerEl.classList.add("message-header", "has-background-black");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
@@ -261,26 +263,64 @@ async function makeCardFood (data, attachingEl) {
         buttonEl.classList.add("button", "is-small", "is-danger");
         buttonEl.textContent = "Delete ";
 
-        buttonEl.addEventListener("click", deleteLocalStorageDrink)
+        buttonEl.addEventListener("click", deleteLocalStorageFood)
         
         const iconEl = document.createElement("i");
         iconEl.classList.add("fa", "fa-trash");
         buttonEl.appendChild(iconEl);
         paragraphEl.appendChild(buttonEl);
         footerEl.appendChild(paragraphEl);
-        messageEl.appendChild(footerEl);
+        articleEl.appendChild(footerEl);
 
         //append article to element in HTML
         attachingEl.appendChild(articleEl);
     }
 }
-
+// Get the saved dish data
 const getDishInfo = async function (drinkName) {
-    const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${drinkName}&apikey=${apiKey}`);
+    const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${drinkName}&apiKey=${apiKey}&number=1`);
     const data = await response.json();
     console.log(data)
     return data
 }
+async function getIngredient (id) {
+    const ingredientArray = [];
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
+    const data = await response.json();
+    console.log(data)
+    for (let i = 0; i < data.ingredients.length; i++){
+        const ingredientName = await data.ingredients[i].name;
+        const measurement = await data.ingredients[i].amount.us.value + " " + data.ingredients[1].amount.us.unit;
+        const ingredientMeasurement = await ingredientName + ": " + measurement;
+        ingredientArray.push(ingredientMeasurement);
+    }
+    return ingredientArray;
+}
 
+// Get instructions
+async function getInstructions (id) {
+    const instructionArray = [];
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`);
+    const data = await response.json();
+    for (let i = 0; i < data[0].steps.length; i++) {
+        instructionArray.push(data[0].steps[i].step);
+    }
+    return instructionArray;
+}
+
+// Delete Food local storage
+function deleteLocalStorageFood () {
+    //  Get name of drink
+    const message = this.parentNode.parentNode.parentNode;
+    const messageTitle = message.firstChild.firstChild;
+    const dishName = messageTitle.innerText;
+    const savedDishes = localStorage.getItem("dish");
+    console.log(savedDishes)
+    console.log(dishName)
+    const updatedDishes = savedDishes.replace(dishName, "");
+    console.log(updatedDishes)
+    localStorage.setItem("dish", updatedDishes);
+    message.remove();
+}
 loadLocalStorageFood();
 
