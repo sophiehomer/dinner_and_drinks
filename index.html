@@ -14,17 +14,19 @@
 <body>
 
      <!-- Navigation -->
+<header>
    <div class="block">
        <nav class="nav">
-           <div class="navbar-brand pl-5 pt-5">
+           <div class="navbar-brand pl-5 pt-6">
          <h1 class="title">RECIPES</h1>
            </div>
            <div class= "nav-right">
                <a href="" class="navbar-end pr-5"><h1 class="home">HOME</h1></a>
-               <a href="" class="navbar-end pb-5 pr-5"><h1 class="cocktails">COCKTAILS</h1></a>
+               <a href="drinkIndex.html" class="navbar-end pr-5"><h1 class="cocktails">COCKTAILS</h1></a>
            </div>
         </nav>
    </div>
+</header>  
     <div class="container columns">
         <aside class="column is-vcentered mx-3">
             <div id="form" class="column is-vcentered">
@@ -78,7 +80,7 @@
                             <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
                             Pescetarian
                         </label>
-                        
+                        <div class="block">
                         <label class="checkbox mx-3 pt-3">
                             <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
                             Vegetarian
@@ -91,77 +93,9 @@
                             <input type="checkbox" class="lifestyle mb-4" id="glutenFree" value="glutenFree">
                             Gluten Free
                         </label>
+                   
                     </div>
         
-
-    <!-- Navigation -->
-    <header>
-        <h1>RECIPES</h1>
-    </header>
-    <div class="container columns">
-        <aside class="column mx-6">
-            <div id="form">
-                <div class="container-color">
-                    <form action="#">
-                        <div class="block" id="food_options">
-                            <label class="checkbox mx-3 mt-5">
-                                <input type="checkbox" class="cuisine" id="mexican" value="mexican">
-                                Mexican
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="american" value="american">
-                                American
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="italian" value="italian">
-                                Italian
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="japanese" value="japanese">
-                                Japanese
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="thai" value="thai">
-                                Thai
-                            </label>
-                            <label class="checkbox mx-3 pt-2">
-                                <input type="checkbox" class="cuisine" id="chinese" value="chinese">
-                                Chinese
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="greek" value="greek">
-                                Greek
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="cuisine" id="mediterranean" value="mediterranean">
-                                Mediterranean
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
-                                Ketogenic
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
-                                Paleo
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
-                                Vegan
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
-                                Vegetarian
-                            </label>
-                            <label class="checkbox mx-3 pt-3">
-                                <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
-                                Pescetarian
-                            </label>
-                            <label class="checkbox mx-3 pt-3 mb-4">
-                                <input type="checkbox" class="lifestyle mb-4" id="glutenFree" value="glutenFree">
-                                Gluten Free
-                            </label>
-                        </div>
-
                 </div>
                 <button type="submit" class="button is-medium mt-4" id="search_food">
                     <h3>LETS COOK!</h3>
@@ -174,13 +108,12 @@
         </div>
     </div>
     <!--end of container-->
-    <div class="block mx-4">
-        <a href="drinkIndex.html"><button id="to_drinks" class="button is-medium">
-                <h3>ALCOHOL</h3>
-            </button></a>
-    </div>
     <footer class="footer">
-        <h5></h5>
+        <!-- <a href="" class="footer-item">
+            <span class="icon">
+                <i class="fa fa-twitter"></i>
+            </span>
+        </a> -->
     </footer>
     <script src="assests/js/index.js"></script>
 </body>
