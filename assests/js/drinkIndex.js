@@ -1,13 +1,13 @@
 "use strict";
-const searchDrinkBtn = document.querySelector("#search_drink");
-const recipeDrinkListEl = document.querySelector("#recipe_drink");
-const resultsEl = document.querySelector("#results")
+const searchDrinkBtn = document.querySelector("#search_drinks");
+// const recipeDrinkListEl = document.querySelector("#recipe_drink");
+const resultsEl = document.querySelector("#results");
 
 // Main function
 async function getRecipeCocktails (event) {
     event.preventDefault();
     removeAllChildNodes(resultsEl)
-    const alcohol = getAlcohol();
+    const alcohol = document.querySelector('input[type="radio"]:checked').value;
     const urlByName = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`;
     const response  = await fetch(urlByName);
     const data = await response.json();
@@ -42,19 +42,6 @@ async function getInstructions (id) {
     const data = await response.json();
     const instructions = data.drinks[0].strInstructions;
     return instructions;
-}
-
-// Return the alcohol options from user
-const getAlcohol = function () {
-    const alcoholOptions = [];
-    const choices = document.getElementsByClassName("alcohol");
-    for (let i = 0; i < choices.length; i++) {
-        if (choices[i].checked === true) {
-            alcoholOptions.push(choices[i].value)
-        }
-    }
-    const optionsStr = alcoholOptions.join(",");
-    return optionsStr;
 }
 
 // Save to Local Storage

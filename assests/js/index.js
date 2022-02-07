@@ -92,7 +92,7 @@ async function makeCard (data, attachingEl) {
         articleEl.className = "message";
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div"); 
-        headerEl.className = "message-header";
+        headerEl.classList.add("message-header", "has-background-black");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
