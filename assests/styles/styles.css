@@ -2,54 +2,42 @@ html {
   background-color: #fff;
 }
 
-
-#results {
-    height: 500px;
-    border: 1px solid rgb(14, 12, 12);
-    overflow: scroll;
-}
-
-nav{
-    background-color: black;
-
-}
-
-.title {
-    color: #ffff;
-    font-family: Didot, sans-serif;
-}
-
-nav h1 {
-    color: #ffff;
-    font-family: calibri, sans-serif;
-}
-
-.footer {
-    background-color: black;
-
 header {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-  padding: 20px 35px;
-  background-color: rgb(14, 12, 12);
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   z-index: 5;
 }
-
-h1 {
-  color: #fff;
-  font-size: 30px;
-  font-family: Didot, sans-serif;
-  font-weight: bold;
+#results {
+    height: 500px;
+    border: 1px solid rgb(14, 12, 12);
+    overflow: scroll;
+   
 }
+
+nav{
+    background-color: rgb(14, 12, 12);
+}
+
+
+.title {
+  color: #ffff;
+  font-family: Didot, sans-serif;
+}
+
+nav h1 {
+  color: #ffff;
+  font-family: calibri, sans-serif;
+}
+
+.checkbox {
+  font-family: calibri, sans-serif;
+  }
 
 .button {
   background-color: rgb(14, 12, 12);
-  font-weight: bold;
-  margin-left: 30px;
+  border: 0px;
+  font-size: 12px;
 }
 
 .button:hover {
@@ -57,44 +45,12 @@ h1 {
 }
 
 h3 {
-  font-family: calibri;
+  font-family: calibri, sans-serif;
   color: #fff;
   font-size: 14px;
 }
 
-.checkbox {
-  color: rgb(14, 12, 12);
-  font-family: calibri;
-}
-
-.block {
-  display: flex;
-  flex-direction: column;
-  
-}
-
-.container-color {
-  background-color: #fff;
-  border: 2px solid rgb(14, 12, 12);
-  margin-right: 225px;
-  margin-left: 30px;
-}
-
-#results {
-  height: 700px;
-  border: 1px solid rgb(14, 12, 12);
-  overflow: scroll;
-}
-
 .footer {
   background-color: rgb(14, 12, 12);
-}
-
-.checkbox {
-font-family: calibri, sans-serif;
-}
-
-#food-btn {
-  margin-top: 100px;
 }
 
