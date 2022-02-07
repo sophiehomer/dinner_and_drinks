@@ -131,7 +131,7 @@ async function makeCard(data, attachingEl) {
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
-        buttonEl.classList.add("button", "is-small");
+        buttonEl.classList.add("button", "is-small", "favorites");
         buttonEl.textContent = "Add to Favorites ";
 
         buttonEl.addEventListener("click", saveLocalStorage)
