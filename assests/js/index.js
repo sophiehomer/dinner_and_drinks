@@ -1,80 +1,19 @@
 "use strict";
 const searchFoodBtn = document.querySelector("#search_food");
-const searchDrinkBtn = document.querySelector("#search_drinks");
 const apiKey = "b7dd85109d944e18aa81c263b5672588";
 const recipeFoodListEl = document.querySelector("#results")
 
-const getRecipeTitleAndImage =  function (event) {
+const getRecipeTitleAndImage = async function (event) {
     event.preventDefault();
+    removeAllChildNodes(recipeFoodListEl)
     const cuisine = getCuisine();
     const diet = getLifestyle();
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${cuisine}&diet=${diet}`
-    fetch(url)
-        .then(res => res.json())
-        .then(async function (data) {
-            console.log(data)
-            for (let i = 0; i < data.results.length; i++){
-                // Create article element
-                const articleEl = document.createElement("article");
-                articleEl.className = "message";
-                // Create header Element, Content, and Append
-                const headerEl = document.createElement("div"); 
-                headerEl.className = "message-header";
-                const recipeName = document.createElement("p");
-                recipeName.textContent = data.results[i].title;
-                headerEl.appendChild(recipeName);
-                articleEl.appendChild(headerEl);
-                // Create body Element, Content, and Append
-                    // Create and display image
-                const messageBodyEl = document.createElement("div");
-                messageBodyEl.className = "message-body";
-                const imageEl = document.createElement("div");
-                imageEl.className = "level-item";
-                const image = document.createElement("img");
-                image.setAttribute("src", data.results[i].image);
-                imageEl.appendChild(image);
-                messageBodyEl.appendChild(imageEl);
-                articleEl.appendChild(messageBodyEl);
-                    // Create and display ingredients
-                const ingredientsEl = document.createElement("div");
-                const ingredientTitle = document.createElement("h2");
-                ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
-                ingredientTitle.textContent = "Ingredients";
-                ingredientsEl.appendChild(ingredientTitle);
-                const recipeId = data.results[i].id
-
-                const ingredients = await getIngredient(recipeId);
-                console.log(ingredients.length);
-                for (let i = 0; i < ingredients.length; i ++) {
-                    const ingredient = document.createElement("p");
-                    ingredient.className = "level-item";
-                    ingredient.textContent = ingredients[i]
-                    ingredientsEl.append(ingredient);
-                }
-                messageBodyEl.appendChild(ingredientsEl);
-                    // Create and display instructions
-                const instructionEl = document.createElement("div");
-                const instructionTitle = document.createElement("h2");
-                instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
-                instructionTitle.textContent = "Instructions";
-                instructionEl.appendChild(instructionTitle);
-                const instructions = await getInstructions(recipeId);
-                for (let i = 0; i < instructions.length; i++) {
-                    const step = document.createElement("p");
-                    step.classList.add("level-item", "has-text-centered")
-                    step.textContent = `${i+1}. ${instructions[i]}`;
-                    instructionEl.appendChild(step);
-                }
-                messageBodyEl.appendChild(instructionEl);
-
-
-
-
-                //append article to element in HTML
-                recipeFoodListEl.appendChild(articleEl);
-            }
-        });
+    const response = await fetch(url);
+    const data = await response.json();
+    makeCard(data, recipeFoodListEl)
 }
+// Get user's cuisine
 function getCuisine () {
     const foodItems = [];
     const checkedItems = document.getElementsByClassName("cuisine");
@@ -86,6 +25,8 @@ function getCuisine () {
     const foodChoices = foodItems.join(",");
     return foodChoices;
 }
+
+// Get user's lifestyle
 function getLifestyle () {
     let lifeStyleItems = [];
     let checkedItems = document.getElementsByClassName("lifestyle");
@@ -98,6 +39,7 @@ function getLifestyle () {
     return lifeStyle;
 }
 
+// Get dish's ingredients
 async function getIngredient (id) {
     const ingredientArray = [];
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
@@ -112,8 +54,7 @@ async function getIngredient (id) {
     return ingredientArray;
 }
 
-
-
+// Get dish's instructions
 async function getInstructions (id) {
     const instructionArray = [];
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`);
@@ -126,8 +67,107 @@ async function getInstructions (id) {
     return instructionArray;
 }
 
+// Save to Local Storage
+const saveLocalStorage = function (event) {
+    event.preventDefault();
+    //  Get name of dish
+    const message = this.parentNode.parentNode.parentNode;
+    const messageTitle = message.firstChild.firstChild;
+    let dishName = messageTitle.innerText;
+    dishName = dishName + "  ";
+    // store name of drink in local storage
+    const savedItems = localStorage.getItem("dish")
+    if (savedItems){
+        localStorage.setItem("dish", savedItems + dishName)
+    } else {
+        localStorage.setItem("dish", dishName)
+    }
+}
 
+// Make cards for each dish
+async function makeCard (data, attachingEl) {
+    for (let i = 0; i < data.results.length; i++){
+        // Create article element
+        const articleEl = document.createElement("article");
+        articleEl.className = "message";
+        // Create header Element, Content, and Append
+        const headerEl = document.createElement("div"); 
+        headerEl.className = "message-header";
+        const recipeName = document.createElement("p");
+        recipeName.textContent = data.results[i].title;
+        headerEl.appendChild(recipeName);
+        articleEl.appendChild(headerEl);
+        // Create body Element, Content, and Append
+            // Create and display image
+        const messageBodyEl = document.createElement("div");
+        messageBodyEl.className = "message-body";
+        const imageEl = document.createElement("div");
+        imageEl.className = "level-item";
+        const image = document.createElement("img");
+        image.setAttribute("src", data.results[i].image);
+        imageEl.appendChild(image);
+        messageBodyEl.appendChild(imageEl);
+        articleEl.appendChild(messageBodyEl);
+            // Create and display ingredients
+        const ingredientsEl = document.createElement("div");
+        const ingredientTitle = document.createElement("h2");
+        ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        ingredientTitle.textContent = "Ingredients";
+        ingredientsEl.appendChild(ingredientTitle);
+        const recipeId = data.results[i].id
 
+        const ingredients = await getIngredient(recipeId);
+        console.log(ingredients.length);
+        for (let i = 0; i < ingredients.length; i ++) {
+            const ingredient = document.createElement("p");
+            ingredient.className = "level-item";
+            ingredient.textContent = ingredients[i]
+            ingredientsEl.append(ingredient);
+        }
+        messageBodyEl.appendChild(ingredientsEl);
+            // Create and display instructions
+        const instructionEl = document.createElement("div");
+        const instructionTitle = document.createElement("h2");
+        instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        instructionTitle.textContent = "Instructions";
+        instructionEl.appendChild(instructionTitle);
+        const instructions = await getInstructions(recipeId);
+        for (let i = 0; i < instructions.length; i++) {
+            const step = document.createElement("p");
+            step.classList.add("level-item", "has-text-centered")
+            step.textContent = `${i+1}. ${instructions[i]}`;
+            instructionEl.appendChild(step);
+        }
+        messageBodyEl.appendChild(instructionEl);
+
+        // Create and append the Footer
+        const footerEl = document.createElement("footer");
+        footerEl.classList.add("card-footer", "has-background-black");
+        const paragraphEl = document.createElement("p");
+        paragraphEl.classList.add("card-footer-item");
+        const buttonEl = document.createElement("button");
+        buttonEl.classList.add("button", "is-small");
+        buttonEl.textContent = "Add to Favorites ";
+
+        buttonEl.addEventListener("click", saveLocalStorage)
+        
+        const iconEl = document.createElement("i");
+        iconEl.classList.add("fas", "fa-star");
+        buttonEl.appendChild(iconEl);
+        paragraphEl.appendChild(buttonEl);
+        footerEl.appendChild(paragraphEl);
+        articleEl.appendChild(footerEl);
+
+        //append article to element in HTML
+        attachingEl.appendChild(articleEl);
+    }
+}
 
 searchFoodBtn.addEventListener("click", getRecipeTitleAndImage)
 
+// Helper Functions
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
