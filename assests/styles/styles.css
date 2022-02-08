@@ -1,6 +1,7 @@
 :root {
-  --primary-color: rgb(50, 115, 194);
-  --seconary-color: rgb(220, 19, 19);
+  --primary-color: rgb(249, 147, 116);
+  --seconary-color: rgb(0, 0, 0);
+  --header-color: rgb(206, 81, 43);
 }
 html {
   background-color: var(--secondary-color);
@@ -9,18 +10,19 @@ html {
 .message-header, .card-footer, .navbar-menu {
   background-color: var(--primary-color);
 }
-
+.navbar-menu {
+  background-color: var(--header-color);
+}
 header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   z-index: 5;
   padding-bottom: 10px;
-
 }
 
 .navbar{
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
 }
 
 .title {
@@ -41,6 +43,8 @@ nav h1 {
   border: 0px;
   font-size: 12px;
   background-color: var(--primary-color);
+  color: black;
+  font-weight: bold;
 }
 
 .button:hover {
@@ -54,21 +58,32 @@ h3 {
 }
 
 .footer {
-    background-color: var(--primary-color);
+    background-color: var(--header-color);
     position:fixed;
     bottom: 0;
     width: 100%;
     padding: 0;
 }
+.footer i, .footer h4 {
+  color: black;
+}
 
+.favorites {
+  background-color: rgb(255, 253, 253);
+  border: 1px solid black;
+  color: rgb(189, 56, 56)
+}
 .favorites:active, .favorites:focus {
-  background-color: rgb(199, 71, 32);
-  color: var(--primary-color);
+  font-weight: 900;
+  color: rgb(189, 56, 56)
 
 }
 .navbar-item, .logo {
   color: var(--seconary-color);
   font-family: Didot, sans-serif;
+}
+.navbar-item {
+  font-size: 2vw;
 }
 
 .options-container  {
@@ -94,6 +109,7 @@ h3 {
   width: 60%;
   margin: 0 auto;
   padding-bottom: 15px;
+  color: black;
 }
 
 .results-card {
