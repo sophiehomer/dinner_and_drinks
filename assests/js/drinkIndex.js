@@ -66,7 +66,7 @@ async function makeCard(data, attachingEl) {
     for (let i = 0; i < data.drinks.length; i++) {
         // create Message
         const messageEl = document.createElement("article");
-        messageEl.className = "message";
+        messageEl.classList.add("message", "result-cards");
         // create message header element and attach to message element
         const messageHeaderEl = document.createElement("div");
         messageHeaderEl.classList.add("message-header", "has-background-black");
@@ -158,3 +158,30 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+// Nav-burger menu
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
+        });
+    }
+
+});
