@@ -1,3 +1,4 @@
+
 html {
   background-color: #fff;
 }
@@ -7,16 +8,12 @@ header {
   position: -webkit-sticky;
   top: 0;
   z-index: 5;
-}
-#results {
-    height: 500px;
-    overflow: scroll;
+  padding-bottom: 10px;
 }
 
 nav{
-    background-color: rgb(14, 12, 12);
+  background-color: rgb(14, 12, 12);
 }
-
 
 .title {
   color: #ffff;
@@ -48,7 +45,8 @@ h3 {
 }
 
 .footer {
-  background-color: rgb(14, 12, 12);
+    background-color: rgb(14, 12, 12);
+    height:auto;
 }
 
 .favorites:active, .favorites:focus {
@@ -56,4 +54,39 @@ h3 {
   color: black;
 
 }
+.navbar-item, .logo {
+  color: white;
+  font-family: Didot, sans-serif;
+}
 
+.options-container  {
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#form {
+  position: sticky;
+  position: -webkit-sticky;
+  padding-right: 1vw;
+  top: 5rem;
+  padding-left: 10px;
+}
+
+.page-title {
+  border-bottom: 2px solid black;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.results-card {
+  border: 1px solid black;
+}
+.nav {
+  width: 100%;
+}

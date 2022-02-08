@@ -12,77 +12,101 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <header>
-        <div class="block">
-            <nav class="nav">
-                <div class="navbar-brand pl-5">
-                    <h1 class="title pt-6">COCKTAILS</h1>
+        <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <div class="logo">
+                        <h1 class="is-size-3 is-size-4-mobile is-size-2-desktop logo">D<span
+                                class="is-size-5 is-size-6-mobile is-size-4-desktop ">inner</span>&D<span
+                                class="is-size-5 is-size-6-mobile is-size-4-desktop">rinks</span></h1>
+                    </div>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu has-background-black">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#">
+                        Home
+                    </a>
+                    <a class="navbar-item" href="index.html">
+                        Food
+                    </a>
+                    <a class="navbar-item" href="favorites.html">
+                        Favorites
+                    </a>
                 </div>
-                <div class="nav-right">
-                    <a href="#" class="navbar-end pr-5">
-                        <h1 class="home">HOME</h1>
-                    </a>
-                    <a href="index.html" class="navbar-end pr-5">
-                        <h1 class="food">FOOD</h1>
-                    </a>
-                    <a href="favorites.html" class="navbar-end pr-5">
-                        <h1 class="cocktails">FAVORITES</h1>
-                    </a>
-                </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
-    <div class="container columns">
-        <aside class="column mx-3 mt-3">
-            <div id="form">
-                <div class="food-container">
-                    <form action="">
-                        <div class="block" id="food_options">
-                            <label class="radio mx-3  mt-5">
-                                <input type="radio" name="alcohol" id="tequila" value="tequila">
-                                Tequila
-                            </label>
-                            <label class="radio mx-3 pt-3">
-                                <input type="radio" name="alcohol" id="whiskey" value="whiskey">
-                                Whiskey
-                            </label>
-                            <label class="radio mx-3 pt-3">
-                                <input type="radio" name="alcohol" id="gin" value="gin">
-                                Gin
-                            </label>
-                            <div class="block">
-                                <label class="radio mx-3 pt-3">
-                                    <input type="radio" name="alcohol" id="scotch" value="scotch">
-                                    Scotch
-                                </label>
-                                <label class="radio mx-3 pt-3">
-                                    <input type="radio" name="alcohol" id="vodka" value="vodka">
-                                    Vodka
-                                </label>
-                                <label class="radio mx-3 pt-3 mb-4">
-                                    <input type="radio" name="alcohol" id="rum" value="rum">
-                                    Rum
-                                </label>
-                            </div>
-                        </div>
-                </div>
-                <button type="submit" class="button is-medium mt-4 has-background-black" id="search_drinks">
-                    <h3>LET'S DRINK!</h3>
-                </button>
-                </form>
-            </div>
-        </aside>
-            <div id="results" class="column mt-4 p5"> 
-                
-            </div>
-    </div>
-    <!--end of container-->
+    <!-- Main -->
+    <main class="container">
+        <h2 class="title has-text-centered has-text-black page-title">COCKTAILS</h2>
+        <div class="columns is-variable is-8">
+            <aside class="column">
+                <div id="form">
+                    <div class="options-container">
+                        <form action="">
+                            <div id="food_options">
+                                <div class="block">
 
+                                    <h2 class="is-size-5-mobile is-size-4 is-underlined">Liquors</h2>
+                                    <label class="radio mx-3  mt-5">
+                                        <input type="radio" name="alcohol" id="tequila" value="tequila">
+                                        Tequila
+                                    </label>
+                                    <label class="radio mx-3 pt-3">
+                                        <input type="radio" name="alcohol" id="whiskey" value="whiskey">
+                                        Whiskey
+                                    </label>
+                                    <label class="radio mx-3 pt-3">
+                                        <input type="radio" name="alcohol" id="gin" value="gin">
+                                        Gin
+                                    </label>
+                                    <div class="block">
+                                        <label class="radio mx-3 pt-3">
+                                            <input type="radio" name="alcohol" id="scotch" value="scotch">
+                                            Scotch
+                                        </label>
+                                        <label class="radio mx-3 pt-3">
+                                            <input type="radio" name="alcohol" id="vodka" value="vodka">
+                                            Vodka
+                                        </label>
+                                        <label class="radio mx-3 pt-3 mb-4">
+                                            <input type="radio" name="alcohol" id="rum" value="rum">
+                                            Rum
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="button is-medium mt-4 has-background-black" id="search_drinks">
+                                <h3>LET'S DRINK!</h3>
+                            </button>
+                    </div>
+                    </form>
+                </div>
+            </aside>
+            <!-- display the results as cards -->
+            <article id="results" class="message column mt-4 mb-6 is-three-fifths">
+                <div class="message-header has-background-black">
+                    <p>Let's get started!</p>
+                </div>
+                <div class="message-body subtitle">
+                    Choose your favorite liquor or whatever you have available to see drink options. Click the favorites button to save to your favorites page. 
+                </div>
+            </article>
+        </div>
+    </main>
+    <!--end of container-->
     <!-- Footer -->
     <footer class="footer">
-        <h5></h5>
     </footer>
-
     <script src="assests/js/drinkIndex.js"></script>
 </body>
 

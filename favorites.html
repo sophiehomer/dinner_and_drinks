@@ -13,35 +13,51 @@
 
 <body>
     <!-- Navigation -->
-    <div class="block">
-        <nav class="nav">
-            <div class="navbar-brand pl-5 pt-5">
-                <h1 class="title">Favorites</h1>
+    <header>
+        <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <div class="logo">
+                        <h1 class="is-size-3 is-size-4-mobile is-size-2-desktop logo">D<span
+                                class="is-size-5 is-size-6-mobile is-size-4-desktop ">inner</span>&D<span
+                                class="is-size-5 is-size-6-mobile is-size-4-desktop">rinks</span></h1>
+                    </div>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div class="nav-right">
-                    <a href="index.html" class="navbar-end mr-5">
-                        <h1 class="home">HOME</h1>
+            <div id="navbarBasicExample" class="navbar-menu has-background-black">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#">
+                        Home
                     </a>
-                    <a href="index.html" class="navbar-end pr-5">
-                        <h1 class="food">FOOD</h1>
+                    <a class="navbar-item" href="index.html">
+                        Food
                     </a>
-                    <a href="drinkIndex.html" class="navbar-end pr-5">
-                        <h1 class="cocktails">COCKTAILS</h1>
+                    <a class="navbar-item" href="drinkIndex.html">
+                        Drinks
                     </a>
+                </div>
             </div>
         </nav>
-    </div>
+    </header>
     <!-- display favorites -->
-    <div class="container columns">
-        <div class="column">
-            <h2 class="has-text-centered is-size-2">Favorite Drinks</h2>
-            <div id="favorite_drinks"></div>
+    <main class="container">
+        <div class="columns">
+            <div class="column">
+                <h2 class="has-text-centered is-size-2">Favorite Drinks</h2>
+                <div id="favorite_drinks"></div>
+            </div>
+            <div class=" column">
+                <h2 class ="has-text-centered is-size-2">Favorite Food</h2>
+                <div id="favorite_food"></div>
+            </div>
         </div>
-        <div class=" column">
-            <h2 class ="has-text-centered is-size-2">Favorite Food</h2>
-            <div id="favorite_food"></div>
-        </div>
-    </div>
+    </main>
     <script src="assests/js/favorites.js"></script>
 </body>
 </html>
