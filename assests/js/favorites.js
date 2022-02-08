@@ -46,7 +46,7 @@ async function makeCardDrink(data, attachingEl) {
         messageEl.className = "message";
         // create message header element and attach to message element
         const messageHeaderEl = document.createElement("div");
-        messageHeaderEl.classList.add("message-header", "has-background-black");
+        messageHeaderEl.classList.add("message-header");
         // create title for message element and attach to header
         const title = document.createElement("p");
         title.textContent = data.drinks[i].strDrink;
@@ -104,7 +104,7 @@ async function makeCardDrink(data, attachingEl) {
 
         // // Create and append the Footer
         const footerEl = document.createElement("footer");
-        footerEl.classList.add("card-footer", "has-background-black");
+        footerEl.classList.add("card-footer");
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
@@ -204,7 +204,7 @@ async function makeCardFood (data, attachingEl) {
         articleEl.className = "message";
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div"); 
-        headerEl.classList.add("message-header", "has-background-black");
+        headerEl.classList.add("message-header");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
@@ -255,7 +255,7 @@ async function makeCardFood (data, attachingEl) {
 
         // // Create and append the Footer
         const footerEl = document.createElement("footer");
-        footerEl.classList.add("card-footer", "has-background-black");
+        footerEl.classList.add("card-footer");
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");

@@ -14,7 +14,7 @@
 <body>
     <!-- Navigation -->
     <header>
-        <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="#">
                     <div class="logo">
@@ -30,7 +30,7 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div id="navbarBasicExample" class="navbar-menu has-background-black">
+            <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item" href="#">
                         Home
@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="button is-medium mt-4 has-background-black" id="search_drinks">
+                            <button type="submit" class="button is-medium mt-4" id="search_drinks">
                                 <h3>LET'S DRINK!</h3>
                             </button>
                     </div>
@@ -94,7 +94,7 @@
             </aside>
             <!-- display the results as cards -->
             <article id="results" class="message column mt-4 mb-6 is-three-fifths">
-                <div class="message-header has-background-black">
+                <div class="message-header">
                     <p>Let's get started!</p>
                 </div>
                 <div class="message-body subtitle">
@@ -105,8 +105,16 @@
     </main>
     <!--end of container-->
     <!-- Footer -->
-    <footer class="footer">
-    </footer>
+    <footer class="level is-mobile mb-0 footer">
+        <div class="footer-left pl-5">
+            <i class="fab fa-twitter has-text-white pl-3"></i>
+            <i class="fab fa-instagram has-text-white pl-3"></i>
+            <i class="fab fa-youtube has-text-white pl-3"></i>
+        </div>
+        <div class="level-item has-text-centered has-text-white">
+            <h4>&copy; 2022 Dinner & Drinks</h4>
+        </div>
+        </footer>
     <script src="assests/js/drinkIndex.js"></script>
 </body>
 

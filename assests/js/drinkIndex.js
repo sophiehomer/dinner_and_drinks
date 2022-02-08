@@ -69,7 +69,7 @@ async function makeCard(data, attachingEl) {
         messageEl.classList.add("message", "result-cards");
         // create message header element and attach to message element
         const messageHeaderEl = document.createElement("div");
-        messageHeaderEl.classList.add("message-header", "has-background-black");
+        messageHeaderEl.classList.add("message-header");
         // create title for message element and attach to header
         const title = document.createElement("p");
         title.textContent = data.drinks[i].strDrink;
@@ -127,7 +127,7 @@ async function makeCard(data, attachingEl) {
 
         // Create and append the Footer
         const footerEl = document.createElement("footer");
-        footerEl.classList.add("card-footer", "has-background-black");
+        footerEl.classList.add("card-footer");
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
