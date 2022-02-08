@@ -9,6 +9,7 @@ html {
 
 .message-header, .card-footer, .navbar-menu {
   background-color: var(--primary-color);
+
 }
 .navbar-menu {
   background-color: var(--header-color);
@@ -43,7 +44,7 @@ nav h1 {
   border: 0px;
   font-size: 12px;
   background-color: var(--primary-color);
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
@@ -59,13 +60,11 @@ h3 {
 
 .footer {
     background-color: var(--header-color);
-    position:fixed;
+    position: fixed;
     bottom: 0;
     width: 100%;
     padding: 0;
-}
-.footer i, .footer h4 {
-  color: black;
+    margin-bottom: 0;
 }
 
 .favorites {
@@ -83,9 +82,8 @@ h3 {
   font-family: Didot, sans-serif;
 }
 .navbar-item {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
-
 .options-container  {
   margin-top: 10px;
   border: 1px solid black;
@@ -105,11 +103,13 @@ h3 {
 }
 
 .page-title {
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   width: 60%;
   margin: 0 auto;
-  padding-bottom: 15px;
+  padding-bottom: 1vw;
   color: black;
+  font-size: 5vw;
+  margin-bottom: 2vw;
 }
 
 .results-card {
@@ -117,4 +117,34 @@ h3 {
 }
 .nav {
   width: 100%;
+}
+
+.homepage-title {
+  text-align: center;
+  font-size: 5vw;
+  font-family: didot;
+  padding-top: 3vw;
+}
+
+#homepage-buttons {
+  text-align: center;
+  margin-top: 7vw;
+  padding-bottom: 3vw;
+}
+
+#homepage-main {
+  margin-top: 15vw;
+  background-color: var(--primary-color);
+}
+
+#homepage-buttons .button {
+  background-color: var(--header-color);
+}
+label {
+  font-size: 1rem;
+}
+
+.form-title {
+  font-weight: bolder;
+  
 }

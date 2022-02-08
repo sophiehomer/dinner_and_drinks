@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="homepage-background">
 
 <head>
     <meta charset="UTF-8">
@@ -13,18 +13,30 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="page-title" style="text-align: center; font-size: 100px;"> Dinner & Drinks </h1>
-    </header>
-    <main>
-        <div class="centerDinnerDrinksButton"
-            style="display: flex; justify-content: center; align-items: center; padding: 100px; ">
-            <button class="button mr-5" type="buttonDinner">Dinner</button>
-            <button class="button" type="buttonDrinks">Drinks</button>
+    <main id="homepage-main">
+        <header>
+            <h1 class="page-title homepage-title"> Dinner & Drinks </h1>
+        </header>
+        <div id="homepage-buttons">
+            <a href="index.html">
+                <button class="button is-responsive mr-6">Dinner</button>
+            </a>
+            <a href="drinkIndex.html">
+                <button class="button is-responsive">Drinks</button>
+            </a>
         </div>
     </main>
+    <!-- Footer -->
+    <footer class="level is-mobile footer">
+        <div class="footer-left pl-5">
+            <i class="fab fa-twitter has-text-white pl-3"></i>
+            <i class="fab fa-instagram has-text-white pl-3"></i>
+            <i class="fab fa-youtube has-text-white pl-3"></i>
+        </div>
+        <div class="level-item has-text-centered has-text-white">
+            <h4>&copy; 2022 Dinner & Drinks</h4>
+        </div>
+        </footer>
 
 </body>
-
-
 </html>

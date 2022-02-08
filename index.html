@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="#">
+                <a class="navbar-item" href="homepage.html">
                     <div class="logo">
                         <h1 class="is-size-3 is-size-4-mobile is-size-2-desktop logo">D<span
                                 class="is-size-5 is-size-6-mobile is-size-4-desktop ">inner</span>&D<span
@@ -47,7 +47,7 @@
     </header>
     <!-- Main Form -->
     <main class="container">
-        <h2 class="title has-text-centered page-title">FOOD</h2>
+        <h2 class="has-text-centered page-title title">FOOD</h2>
         <div class="columns is-variable is-8">
             <aside class="column">
                 <div id="form">
@@ -55,81 +55,73 @@
                         <form action="#">
                             <div id="food_options">
                                 <div class="block">
-                                    <h2 class="is-size-5-mobile is-size-4 is-underlined">Cuisine</h2>
-                                    <label class="checkbox mx-3 mt-5">
+                                    <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Cuisine</h2>
+                                    <label class="checkbox mx-2 pt-3">
                                         <input type="checkbox" class="cuisine" id="mexican" value="mexican">
                                         Mexican
                                     </label>
-                                    <label class="checkbox mx-3 pt-3">
+                                    <label class="checkbox mx-2 pt-3">
                                         <input type="checkbox" class="cuisine" id="american" value="american">
                                         American
                                     </label>
-                                    <label class="checkbox mx-3 pt-3">
+                                    <label class="checkbox mx-2 pt-3">
                                         <input type="checkbox" class="cuisine" id="italian" value="italian">
                                         Italian
                                     </label>
-                                    <label class="checkbox mx-3 pt-3">
+                                    <label class="checkbox mx-2 pt-3">
                                         <input type="checkbox" class="cuisine" id="japanese" value="japanese">
                                         Japanese
                                     </label>
-                                    <div class="block">
-                                        <label class="checkbox mx-3 pt-2">
+                                        <label class="checkbox mx-2 pt-2">
                                             <input type="checkbox" class="cuisine" id="chinese" value="chinese">
                                             Chinese
                                         </label>
-                                        <label class="checkbox mx-3 pt-3">
+                                        <label class="checkbox mx-2 pt-3">
                                             <input type="checkbox" class="cuisine" id="greek" value="greek">
                                             Greek
                                         </label>
-                                        <label class="checkbox mx-3 pt-3">
+                                        <label class="checkbox mx-2 pt-3">
                                             <input type="checkbox" class="cuisine" id="thai" value="thai">
                                             Thai
                                         </label>
-                                        <label class="checkbox mx-3 pt-3">
-                                            <input type="checkbox" class="cuisine" id="mediterranean"
+                                        <label class="checkbox mx-2 pt-3">
+                                            <input type="checkbox" class="cuisine mb-4" id="mediterranean"
                                                 value="mediterranean">
                                             Mediterranean
                                         </label>
-                                    </div>
-                                    <div class="block">
-                                        <h2 class="is-size-5-mobile is-size-4 is-underlined">Lifestyle</h2>
-                                        <label class="checkbox mx-3 pt-3">
+                                        <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Lifestyle</h2>
+                                        <label class="checkbox mx-2 pt-3">
                                             <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
                                             Ketogenic
                                         </label>
-                                        <label class="checkbox mx-3 pt-3">
+                                        <label class="checkbox mx-2 pt-3">
                                             <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
                                             Paleo
                                         </label>
-                                        <label class="checkbox mx-3 pt-3">
+                                        <label class="checkbox mx-2 pt-3">
                                             <input type="checkbox" class="lifestyle" id="pescetarian"
                                                 value="pescetarian">
                                             Pescetarian
                                         </label>
-                                        <div class="block">
-                                            <label class="checkbox mx-3 pt-3">
-                                                <input type="checkbox" class="lifestyle" id="vegetarian"
-                                                    value="vegetarian">
-                                                Vegetarian
-                                            </label>
-                                            <label class="checkbox mx-3 pt-3">
-                                                <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
-                                                Vegan
-                                            </label>
-                                            <label class="checkbox mx-3 pt-3 mb-4">
-                                                <input type="checkbox" class="lifestyle mb-4" id="glutenFree"
-                                                    value="glutenFree">
-                                                Gluten Free
-                                            </label>
-                                        </div>
+                                        <label class="checkbox mx-2 pt-3">
+                                            <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
+                                            Vegetarian
+                                        </label>
+                                        <label class="checkbox mx-2 pt-3">
+                                            <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
+                                            Vegan
+                                        </label>
+                                        <label class="checkbox mx-2 pt-3 mb-4">
+                                            <input type="checkbox" class="lifestyle mb-4" id="glutenFree"
+                                                value="glutenFree">
+                                            Gluten Free
+                                        </label>
+                                    <div class="block">
+                                        <button type="submit" class="button is-medium mt-4" id="search_food">
+                                            <h3>LET'S EAT!</h3>
+                                        </button>
                                     </div>
                                 </div>
-
-                                <button type="submit" class="button is-medium mt-4"
-                                    id="search_food">
-                                    <h3>LET'S EAT!</h3>
-                                </button>
-                            </div>
             </aside>
             <!-- display the results as cards -->
             <article id="results" class="message column mt-4 mb-4 is-three-fifths is-medium">
@@ -137,13 +129,14 @@
                     <p>Let's get started!</p>
                 </div>
                 <div class="message-body subtitle mr-4">
-                    Choose some dishes and dietary options to see what's available. Click the favorites button to save to your favorites page. 
+                    Choose some dishes and dietary options to see what's available. Click the favorites button to save
+                    to your favorites page.
                 </div>
             </article>
         </div>
     </main>
     <!--end of container-->
-    <footer class="level is-mobile pt-5 pb-5 mb-0 footer">
+    <footer class="level is-mobile footer">
         <div class="footer-left pl-5">
             <i class="fab fa-twitter has-text-white pl-3"></i>
             <i class="fab fa-instagram has-text-white pl-3"></i>
@@ -152,7 +145,7 @@
         <div class="level-item has-text-centered has-text-white">
             <h4>&copy; 2022 Dinner & Drinks</h4>
         </div>
-        </footer>
+    </footer>
     <script src="assests/js/index.js"></script>
 </body>
 
