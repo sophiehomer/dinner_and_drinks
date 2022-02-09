@@ -62,8 +62,6 @@ async function getInstructions(id) {
     const instructionArray = [];
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`);
     const data = await response.json();
-    console.log(data)
-    console.log(data[0].steps.length)
     for (let i = 0; i < data[0].steps.length; i++) {
         instructionArray.push(data[0].steps[i].step);
     }
