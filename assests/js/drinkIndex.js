@@ -5,6 +5,7 @@ const resultsEl = document.querySelector("#results");
 
 // Main function
 async function getRecipeCocktails (event) {
+    this.classList.add("is-loading");
     event.preventDefault();
     removeAllChildNodes(resultsEl)
     const alcohol = document.querySelector('input[type="radio"]:checked').value;
@@ -12,6 +13,7 @@ async function getRecipeCocktails (event) {
     const response  = await fetch(urlByName);
     const data = await response.json();
     await makeCard(data, resultsEl);
+    this.classList.remove("is-loading");
 }
 // Return the ingredients and measurements in a 2-d array
 async function getIngredientMeasurement (id) {
@@ -145,6 +147,7 @@ async function makeCard(data, attachingEl) {
         
         // append the whole Message to HTML
         attachingEl.appendChild(messageEl);
+
         
     }
 }
@@ -153,6 +156,7 @@ searchDrinkBtn.addEventListener("click", getRecipeCocktails);
 
 
 // Helper Functions
+// Clear a div of all it's children
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);

@@ -3,15 +3,18 @@ const searchFoodBtn = document.querySelector("#search_food");
 const apiKey = "b7dd85109d944e18aa81c263b5672588";
 const recipeFoodListEl = document.querySelector("#results")
 
+// Main function 
 const getRecipeTitleAndImage = async function (event) {
     event.preventDefault();
+    this.classList.add("is-loading");
     removeAllChildNodes(recipeFoodListEl)
     const cuisine = getCuisine();
     const diet = getLifestyle();
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${cuisine}&diet=${diet}`
     const response = await fetch(url);
     const data = await response.json();
-    makeCard(data, recipeFoodListEl)
+    makeCard(data, recipeFoodListEl);
+    this.classList.remove("is-loading");
 }
 // Get user's cuisine
 function getCuisine() {

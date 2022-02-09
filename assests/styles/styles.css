@@ -117,18 +117,28 @@ h3 {
 
 #homepage-buttons {
   text-align: center;
-  margin-top: 7vw;
-  padding-bottom: 3vw;
+  margin-top: 1vw;
+  padding-bottom: 1vw;
 }
 
 #homepage-main {
   margin-top: 15vw;
-  background-color: var(--primary-color);
+  background-color: rgba(249, 147, 116, 0.913);
 }
 
 #homepage-buttons .button {
   background-color: var(--header-color);
 }
+
+#homepage-body {
+  background-image: url(../images/group-happy-friends-eating-drinking-780974.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
 label {
   font-size: 1rem;
 }
@@ -141,7 +151,7 @@ label {
 .footer {
   background-color: var(--header-color);
   position: fixed;
-  bottom: -100px;
+  bottom: -120px;
   width: 100%;
 }
 
@@ -170,6 +180,15 @@ label {
   margin-bottom: 1vw;
 }
 
-#results {
+#results, #favorite_drinks, #favorite_food {
   padding-bottom: 20vw;
 }
+
+.fa-champagne-glasses, .fa-utensils {
+  font-size: 5vw;
+  display: block;
+  margin-top: 2vw;
+  text-align: center;
+  color: black;
+}
+
