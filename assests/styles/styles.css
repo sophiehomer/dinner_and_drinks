@@ -13,6 +13,7 @@ html {
 }
 .navbar-menu {
   background-color: var(--header-color);
+  
 }
 header {
   position: sticky;
@@ -58,15 +59,6 @@ h3 {
   font-size: 14px;
 }
 
-.footer {
-    background-color: var(--header-color);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 0;
-}
-
 .favorites {
   background-color: rgb(255, 253, 253);
   border: 1px solid black;
@@ -75,19 +67,16 @@ h3 {
 .favorites:active, .favorites:focus {
   font-weight: 900;
   color: rgb(189, 56, 56)
-
 }
 .navbar-item, .logo {
   color: var(--seconary-color);
   font-family: Didot, sans-serif;
 }
-.navbar-item {
-  font-size: 2.5vw;
-}
+
 .options-container  {
   margin-top: 10px;
   border: 1px solid black;
-  padding: 20px;
+  padding: 1vw;
   border-radius: 5px;
   box-shadow: 5px 10px 20px;
   align-items: center;
@@ -99,7 +88,7 @@ h3 {
   position: -webkit-sticky;
   padding-right: 1vw;
   top: 5rem;
-  padding-left: 10px;
+  padding-left: 2px;
 }
 
 .page-title {
@@ -147,4 +136,40 @@ label {
 .form-title {
   font-weight: bolder;
   
+}
+
+.footer {
+  background-color: var(--header-color);
+  position: fixed;
+  bottom: -100px;
+  width: 100%;
+}
+
+.footer-icons {
+  color: black;
+  margin-right: .5vw;
+}
+.footer-copyright {
+  font-weight: bold;
+  color: black;
+}
+
+#banner-food {
+  background-image: url(../images/well-foods-microbiome-mobileMasterAt3x.jpeg);
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 1vw;
+}
+
+#banner-drink {
+  background-image: url(../images/assorted-wine-bottles-1283219.jpeg);
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 1vw;
+}
+
+#results {
+  padding-bottom: 20vw;
 }

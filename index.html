@@ -18,9 +18,9 @@
             <div class="navbar-brand">
                 <a class="navbar-item" href="homepage.html">
                     <div class="logo">
-                        <h1 class="is-size-3 is-size-4-mobile is-size-2-desktop logo">D<span
-                                class="is-size-5 is-size-6-mobile is-size-4-desktop ">inner</span>&D<span
-                                class="is-size-5 is-size-6-mobile is-size-4-desktop">rinks</span></h1>
+                        <h1 class="is-size-2 is-size-3-mobile is-size-2-desktop logo">D<span
+                                class="is-size-4 is-size-5-mobile">inner</span>&D<span
+                                class="is-size-4 is-size-5-mobile">rinks</span></h1>
                     </div>
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
@@ -32,13 +32,13 @@
             </div>
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="homepage.html">
+                    <a class="navbar-item is-size-4 is-size-6-mobile" href="homepage.html">
                         Home
                     </a>
-                    <a class="navbar-item" href="drinkIndex.html">
+                    <a class="navbar-item is-size-4 is-size-6-mobile" href="drinkIndex.html">
                         Drinks
                     </a>
-                    <a class="navbar-item" href="favorites.html">
+                    <a class="navbar-item is-size-4 is-size-6-mobile" href="favorites.html">
                         Favorites
                     </a>
                 </div>
@@ -48,7 +48,8 @@
     <!-- Main Form -->
     <main class="container">
         <h2 class="has-text-centered page-title title">FOOD</h2>
-        <div class="columns is-variable is-8">
+        <div id="banner-food"></div>
+        <div class="columns">
             <aside class="column">
                 <div id="form">
                     <div class="options-container">
@@ -72,63 +73,62 @@
                                         <input type="checkbox" class="cuisine" id="japanese" value="japanese">
                                         Japanese
                                     </label>
-                                        <label class="checkbox mx-2 pt-2">
-                                            <input type="checkbox" class="cuisine" id="chinese" value="chinese">
-                                            Chinese
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="cuisine" id="greek" value="greek">
-                                            Greek
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="cuisine" id="thai" value="thai">
-                                            Thai
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="cuisine mb-4" id="mediterranean"
-                                                value="mediterranean">
-                                            Mediterranean
-                                        </label>
-                                        <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Lifestyle</h2>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
-                                            Ketogenic
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
-                                            Paleo
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="lifestyle" id="pescetarian"
-                                                value="pescetarian">
-                                            Pescetarian
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
-                                            Vegetarian
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3">
-                                            <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
-                                            Vegan
-                                        </label>
-                                        <label class="checkbox mx-2 pt-3 mb-4">
-                                            <input type="checkbox" class="lifestyle mb-4" id="glutenFree"
-                                                value="glutenFree">
-                                            Gluten Free
-                                        </label>
+                                    <label class="checkbox mx-2 pt-2">
+                                        <input type="checkbox" class="cuisine" id="chinese" value="chinese">
+                                        Chinese
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="cuisine" id="greek" value="greek">
+                                        Greek
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="cuisine" id="thai" value="thai">
+                                        Thai
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="cuisine mb-4" id="mediterranean"
+                                            value="mediterranean">
+                                        Mediterranean
+                                    </label>
+                                    <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Lifestyle</h2>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
+                                        Ketogenic
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
+                                        Paleo
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
+                                        Pescetarian
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
+                                        Vegetarian
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3">
+                                        <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
+                                        Vegan
+                                    </label>
+                                    <label class="checkbox mx-2 pt-3 mb-4">
+                                        <input type="checkbox" class="lifestyle mb-4" id="glutenFree"
+                                            value="glutenFree">
+                                        Gluten Free
+                                    </label>
                                     <div class="block">
-                                        <button type="submit" class="button is-medium mt-4" id="search_food">
+                                        <button type="submit" class="button is-small mt-4" id="search_food">
                                             <h3>LET'S EAT!</h3>
                                         </button>
                                     </div>
                                 </div>
             </aside>
             <!-- display the results as cards -->
-            <article id="results" class="message column mt-4 mb-4 is-three-fifths is-medium">
+            <article id="results" class="column mt-4 mb-4 is-three-fifths">
                 <div class="message-header">
                     <p>Let's get started!</p>
                 </div>
-                <div class="message-body subtitle mr-4">
+                <div class="message-body subtitle">
                     Choose some dishes and dietary options to see what's available. Click the favorites button to save
                     to your favorites page.
                 </div>
@@ -136,16 +136,25 @@
         </div>
     </main>
     <!--end of container-->
-    <footer class="level is-mobile footer">
-        <div class="footer-left pl-5">
-            <i class="fab fa-twitter has-text-white pl-3"></i>
-            <i class="fab fa-instagram has-text-white pl-3"></i>
-            <i class="fab fa-youtube has-text-white pl-3"></i>
+    <!-- Footer -->
+    <footer class="pt-2 footer">
+        <div class="columns">
+            <div class="footer-left column ">
+                <a href="#" class="footer-icons is-size-3 is-size-6-mobile">
+                    <i class="fab fa-twitter blackiconcolor pl-2"></i>
+                </a>
+                <a href="#" class="footer-icons is-size-3 is-size-6-mobile">
+                    <i class="fab fa-instagram blackiconcolor pl-2"></i>
+                </a>
+                <a href="#" class="footer-icons is-size-3 is-size-6-mobile">
+                    <i class="fab fa-youtube blackiconcolor pl-2"></i>
+                </a>
+            </div>
+            <div class="footer-copyright column">
+                <h4 class="has-text-centered">&copy; 2022 Dinner & Drinks</h4>
+            </div>
+        </footer>
         </div>
-        <div class="level-item has-text-centered has-text-white">
-            <h4>&copy; 2022 Dinner & Drinks</h4>
-        </div>
-    </footer>
     <script src="assests/js/index.js"></script>
 </body>
 
