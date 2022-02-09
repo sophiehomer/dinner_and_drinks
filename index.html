@@ -1,143 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="homepage-background">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dinner and Drinks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="assests/styles/styles.css">
+
 </head>
 
-<body>
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="homepage.html">
-                    <div class="logo">
-                        <h1 class="is-size-2 is-size-3-mobile is-size-2-desktop logo">D<span
-                                class="is-size-4 is-size-5-mobile">inner</span>&D<span
-                                class="is-size-4 is-size-5-mobile">rinks</span></h1>
-                    </div>
-                </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item is-size-4 is-size-6-mobile" href="homepage.html">
-                        Home
-                    </a>
-                    <a class="navbar-item is-size-4 is-size-6-mobile" href="drinkIndex.html">
-                        Drinks
-                    </a>
-                    <a class="navbar-item is-size-4 is-size-6-mobile" href="favorites.html">
-                        Favorites
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Main Form -->
-    <main class="container">
-        <h2 class="has-text-centered page-title title">FOOD</h2>
-        <div id="banner-food"></div>
-        <div class="columns">
-            <aside class="column">
-                <div id="form">
-                    <div class="options-container">
-                        <form action="#">
-                            <div id="food_options">
-                                <div class="block">
-                                    <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Cuisine</h2>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="mexican" value="mexican">
-                                        Mexican
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="american" value="american">
-                                        American
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="italian" value="italian">
-                                        Italian
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="japanese" value="japanese">
-                                        Japanese
-                                    </label>
-                                    <label class="checkbox mx-2 pt-2">
-                                        <input type="checkbox" class="cuisine" id="chinese" value="chinese">
-                                        Chinese
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="greek" value="greek">
-                                        Greek
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine" id="thai" value="thai">
-                                        Thai
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="cuisine mb-4" id="mediterranean"
-                                            value="mediterranean">
-                                        Mediterranean
-                                    </label>
-                                    <h2 class="is-size-6-mobile is-size-4 is-underlined form-title">Lifestyle</h2>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="lifestyle" id="ketogenic" value="ketogenic">
-                                        Ketogenic
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="lifestyle" id="paleo" value="paleo">
-                                        Paleo
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="lifestyle" id="pescetarian" value="pescetarian">
-                                        Pescetarian
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="lifestyle" id="vegetarian" value="vegetarian">
-                                        Vegetarian
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3">
-                                        <input type="checkbox" class="lifestyle" id="vegan" value="vegan">
-                                        Vegan
-                                    </label>
-                                    <label class="checkbox mx-2 pt-3 mb-4">
-                                        <input type="checkbox" class="lifestyle mb-4" id="glutenFree"
-                                            value="glutenFree">
-                                        Gluten Free
-                                    </label>
-                                    <div class="block">
-                                        <button type="submit" class="button is-small mt-4" id="search_food">
-                                            <h3>LET'S EAT!</h3>
-                                        </button>
-                                    </div>
-                                </div>
-            </aside>
-            <!-- display the results as cards -->
-            <article id="results" class="column mt-4 mb-4 is-three-fifths">
-                <div class="message-header">
-                    <p>Let's get started!</p>
-                </div>
-                <div class="message-body subtitle">
-                    Choose some dishes and dietary options to see what's available. Click the favorites button to save
-                    to your favorites page.
-                    <br />
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-            </article>
+<body id="homepage-body">
+    <main id="homepage-main">
+        <header>
+            <h1 class="page-title homepage-title"> Dinner & Drinks </h1>
+        </header>
+        <div id="homepage-buttons">
+            <a href="foodIndex.html">
+                <button class="button is-responsive mr-6">Dinner</button>
+            </a>
+            <a href="drinkIndex.html">
+                <button class="button is-responsive">Drinks</button>
+            </a>
         </div>
     </main>
-    <!--end of container-->
     <!-- Footer -->
     <footer class="level is-mobile pt-2 footer">
         <div class="footer-left pl-5">
@@ -155,7 +43,6 @@
             <h4>&copy; 2022 Dinner & Drinks</h4>
         </div>
     </footer>
-    <script src="assests/js/index.js"></script>
 </body>
 
 </html>
