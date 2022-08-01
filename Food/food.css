@@ -1,0 +1,47 @@
+body {
+    position: relative;
+    min-height: 110vh;
+    letter-spacing: .02em;
+    font-family: lato, arial, helvetica;
+   
+  }
+/* --------------------------------- HEADER --------------------------------- */
+
+
+#logo {
+    color: white !important;
+    font-family: georgia, arial, helvetica;
+}
+
+nav {
+    padding: 1%;
+    font-size: 1.2em;
+}
+/* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
+
+
+/* --------------------------------- FOOTER --------------------------------- */
+footer {
+    background-color: black !important;
+    color: white;
+    position: absolute !important;
+    width: 100%;
+    bottom: 0 !important;
+    margin: 0px !important;
+  }
+  
+  .footer-copyright {
+    padding-right: 2%;
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+  
+  .footer-icons {
+    color: white;
+  }
+  
+  .footer-icons:hover {
+    color: #FFD211;
+  }
+  
+  

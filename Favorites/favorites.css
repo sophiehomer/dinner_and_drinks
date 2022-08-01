@@ -1,0 +1,37 @@
+body {
+    position: relative;
+    min-height: 110vh;
+    /* background: url(../assests/images/landingPage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+    letter-spacing: .02em;
+  }
+
+
+/* --------------------------------- FOOTER --------------------------------- */
+footer {
+    background-color: black !important;
+    color: white;
+    position: absolute !important;
+    width: 100%;
+    bottom: 0 !important;
+    margin: 0px !important;
+  }
+  
+  .footer-copyright {
+    padding-right: 2%;
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+  
+  .footer-icons {
+    color: white;
+  }
+  
+  .footer-icons:hover {
+    color: #FFD211;
+  }
+  
+  
