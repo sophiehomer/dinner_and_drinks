@@ -1,0 +1,140 @@
+:root {
+    --primary-color: #FFD211;
+    --seconary-color: rgb(0, 0, 0);
+    /* --header-color: rgb(206, 81, 43); */
+  }
+
+  body {
+    position: relative;
+    min-height: 120vh;
+    background: url(../assests/images/landingPage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    letter-spacing: .02em;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    /* border-bottom: 1px solid rgb(196, 193, 193); */
+    width: 100%;
+    padding: 0;
+  }
+
+  /* ------------- HOMEPAGE ------------- */
+
+#homepageImg {
+  display: flex;
+  justify-content: center;
+  padding-top: 5.5%;
+  object-fit: contain;
+  padding-bottom: 2%;
+}
+
+.homepage-title {
+  text-align: center;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  font-size: 40px;
+  font-family: georgia, arial, helvetica;
+  color: white;
+}
+
+#homepage-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30%;
+}
+
+button {
+
+    padding: .5em 3.5em !important;
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+    letter-spacing: .02 !important;
+    font-weight: 600 !important;
+}
+
+/* #homepage-buttons {
+  text-align: center;
+} */
+
+/* #homepageBody {
+  background-image: url(../assets/images/homepage1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+} */
+
+/* html {
+
+} */
+
+/* #bg {
+  background-image: url(../assets/images/homepage1.jpeg);
+  height: 766px;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+} */
+
+/* #bg {
+  background-image: url(../assets/images/homepage1.jpeg);
+  height: 766px;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+} */
+
+.homepageImg {
+  padding-top: 3%;
+  width: 800px;
+}
+
+.enterButton {
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  border: 0px;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 1% 3% 1% 3%;
+}
+  
+.enterButton:hover {
+  transform: scale(1.1);
+  background-color: #FFD211;
+}
+
+/* --------------------------------- FOOTER --------------------------------- */
+footer {
+  background-color: black !important;
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 1% !important;
+  margin: 0px;
+}
+
+.footer-copyright {
+  padding-right: 2%;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.footer-icons {
+  color: white;
+}
+
+.footer-icons:hover {
+  color: #FFD211;
+}
+
