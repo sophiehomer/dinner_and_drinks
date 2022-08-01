@@ -17,7 +17,15 @@ nav {
     padding: 1%;
     font-size: 1.2em;
 }
+
+
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
+
+
+.message-header {
+    background-color: black !important;
+}
+
 
 
 /* --------------------------------- FOOTER --------------------------------- */
