@@ -1,6 +1,6 @@
 "use strict";
 const searchFoodBtn = document.querySelector("#search_food");
-const apiKey = "b7dd85109d944e18aa81c263b5672588";
+const apiKey = "78ddd99086324893a20e6acc9403a4f8";
 const recipeFoodListEl = document.querySelector("#results")
 
 // Main function 
