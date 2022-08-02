@@ -175,13 +175,6 @@ label {
   margin-bottom: 1vw;
 }
 
-#banner-drink {
-  background-image: url(../images/assorted-wine-bottles-1283219.jpeg);
-  background-position: center;
-  height: 200px;
-  width: 100%;
-  margin-bottom: 1vw;
-}
 
 #results, #favorite_drinks, #favorite_food {
   padding-bottom: 20vw;
