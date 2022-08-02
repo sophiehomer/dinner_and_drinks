@@ -22,6 +22,9 @@ nav {
     margin-top: 1%;
 }
 
+#search_drinks {
+  margin-bottom: 20% !important;
+}
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
 
 .message-header {
