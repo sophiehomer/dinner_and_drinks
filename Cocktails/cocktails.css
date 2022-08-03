@@ -1,7 +1,6 @@
 body {
   position: relative;
   min-height: 100vh;
-  letter-spacing: 0.02em !important;
   font-family: lato, arial, helvetica;
 }
 /* --------------------------------- HEADER --------------------------------- */
@@ -48,21 +47,23 @@ nav {
   border: 1px solid black;
   font-size: .95em;
 }
-.message-header {
-  background-color: #000000 !important;
-}
+
 .message-header {
   background-color: black !important;
   color: white !important;
   letter-spacing: .2em !important;
   font-weight: 400;
   font-size: .95em !important;
+  padding-left: 2.75%;
 }
 
 .message-body {
   font-size: .9em;
   letter-spacing: 0.04em !important;
   line-height: 1.5em;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
 }
 
 .form-title {
@@ -71,6 +72,42 @@ nav {
   font-weight: bold;
 }
 
+.result-cards {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+
+.card-footer-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: white !important;
+  padding-top: 2% !important;
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+  padding-bottom: 4% !important;
+}
+
+.favorites {
+  border: 1px solid black !important;
+  letter-spacing: .2em !important;
+  padding: .8em 4.75em;
+  border: 1px solid black;
+  font-size: .95em;
+}
+
+.ingredientTitle,
+.instructionTitle {
+  font-weight: 400 !important;
+  letter-spacing: .1em !important;
+  text-decoration: underline !important;
+}
 /* --------------------------------- FOOTER --------------------------------- */
 footer {
   background-color: #000000 !important;

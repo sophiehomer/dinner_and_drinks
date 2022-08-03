@@ -71,7 +71,7 @@ async function makeCard(data, attachingEl) {
         messageEl.classList.add("message", "result-cards");
         // create message header element and attach to message element
         const messageHeaderEl = document.createElement("div");
-        messageHeaderEl.classList.add("message-header");
+        messageHeaderEl.classList.add("message-header", "is-uppercase");
         // create title for message element and attach to header
         const title = document.createElement("p");
         title.textContent = data.drinks[i].strDrink;
@@ -83,9 +83,9 @@ async function makeCard(data, attachingEl) {
         messageBodyEl.classList.add("message-body")
         // create image
         const imageDivEl = document.createElement("div");
-        imageDivEl.classList.add("has-text-centered");
+        imageDivEl.classList.add("level-left");
         const figureEl = document.createElement("figure");
-        figureEl.classList.add("image", "is-128x128", "is-inline-block")
+        figureEl.classList.add("image", "is-128x128", "level-left")
         const imageEl = document.createElement("img");
         imageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
         figureEl.appendChild(imageEl);
@@ -95,7 +95,7 @@ async function makeCard(data, attachingEl) {
             // Title
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        ingredientTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "ingredientTitle");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
             // Instructions
@@ -105,7 +105,7 @@ async function makeCard(data, attachingEl) {
             const ingredient = ingredientMeasurementList[0][i];
             const measurement = ingredientMeasurementList[1][i];
             const ingredientMeasurementEl = document.createElement("p")
-            ingredientMeasurementEl.className = "level-item";
+            ingredientMeasurementEl.className = "level-left";
             ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
             ingredientsEl.appendChild(ingredientMeasurementEl);
         }
@@ -114,7 +114,7 @@ async function makeCard(data, attachingEl) {
             // Title
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        instructionTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "instructionTitle");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
             // Instructions
@@ -133,13 +133,12 @@ async function makeCard(data, attachingEl) {
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
-        buttonEl.classList.add("button", "is-small", "favorites");
-        buttonEl.textContent = "Add to Favorites ";
-
+        buttonEl.classList.add("button", "favorites");
+        buttonEl.textContent = "ADD TO FAVORITES";
         buttonEl.addEventListener("click", saveLocalStorage)
         
         const iconEl = document.createElement("i");
-        iconEl.classList.add("fas", "fa-star");
+        // iconEl.classList.add("fas", "fa-star");
         buttonEl.appendChild(iconEl);
         paragraphEl.appendChild(buttonEl);
         footerEl.appendChild(paragraphEl);
