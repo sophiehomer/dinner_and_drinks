@@ -37,9 +37,9 @@ nav {
 }
 
 
-/* .block {
-  max-width: 50% !important;
-} */
+.block {
+  display: flex !important;
+}
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
 .message-header {
   background-color: black !important;
@@ -72,6 +72,7 @@ nav {
   padding: .8em 5.65em;
   border: 1px solid black;
   font-size: .95em;
+  margin-top: 0% !important;
 
 }
 /* --------------------------------- FOOTER --------------------------------- */
