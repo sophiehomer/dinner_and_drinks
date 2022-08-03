@@ -8,6 +8,7 @@ body {
 #logo {
   color: white !important;
   font-family: georgia, arial, helvetica;
+  letter-spacing: .03em !important;
 }
 
 nav {
@@ -20,6 +21,9 @@ nav {
 
 .navbar-item {
   color: white !important;
+  letter-spacing: .2em !important;
+  font-weight: 400;
+  font-size: .95em !important;
 }
 
 .navbar-item:hover {
@@ -40,7 +44,7 @@ nav {
 #search_drinks {
   margin-bottom: 35% !important;
   letter-spacing: .2em !important;
-  padding: .8em 5.65em;
+  padding: .8em 4.75em;
   border: 1px solid black;
   font-size: .95em;
 }
@@ -49,9 +53,10 @@ nav {
 }
 .message-header {
   background-color: black !important;
+  color: white !important;
   letter-spacing: .2em !important;
-  font-size: .95em;
-  font-weight: 400 !important;
+  font-weight: 400;
+  font-size: .95em !important;
 }
 
 .message-body {

@@ -7,20 +7,21 @@ body {
 #logo {
   color: white !important;
   font-family: georgia, arial, helvetica;
+  letter-spacing: .03em !important;
+
 }
 /* --------------------------------- NAV --------------------------------- */
 nav {
   padding-top: 1%;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-bottom: 1%;
-  letter-spacing: 0.02em;
   background-color: #000000 !important;
 }
 
 .navbar-item {
   color: white !important;
-  letter-spacing: .3em !important;
+  letter-spacing: .2em !important;
   font-weight: 400;
   font-size: .95em !important;
 }
@@ -39,13 +40,19 @@ nav {
 
 .block {
   display: flex !important;
+  flex-direction: row;
 }
+
+/* .lifestyleContainer {
+  margin-left: 17%;
+} */
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
 .message-header {
   background-color: black !important;
+  color: white !important;
   letter-spacing: .2em !important;
-  font-size: .95em;
-  font-weight: 400 !important;
+  font-weight: 400;
+  font-size: .95em !important;
 }
 
 .message-body {
@@ -66,14 +73,11 @@ nav {
 
 #search_food {
   margin-bottom: 15% !important;
-  /* letter-spacing: .2em !important;
-  padding: .5em 1.5em; */
   letter-spacing: .2em !important;
-  padding: .8em 5.65em;
+  padding: .8em 4.75em;
   border: 1px solid black;
   font-size: .95em;
   margin-top: 0% !important;
-
 }
 /* --------------------------------- FOOTER --------------------------------- */
 footer {
