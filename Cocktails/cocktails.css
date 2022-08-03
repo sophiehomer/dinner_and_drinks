@@ -1,17 +1,13 @@
 body {
-    position: relative;
-    min-height: 100vh;
-    letter-spacing: .02em;
-    font-family: lato, arial, helvetica;
-   
-  }
-
+  position: relative;
+  min-height: 100vh;
+  letter-spacing: 0.02em !important;
+  font-family: lato, arial, helvetica;
+}
 /* --------------------------------- HEADER --------------------------------- */
-
-
 #logo {
-    color: white !important;
-    font-family: georgia, arial, helvetica;
+  color: white !important;
+  font-family: georgia, arial, helvetica;
 }
 
 nav {
@@ -19,33 +15,60 @@ nav {
   padding-left: 3%;
   padding-right: 3%;
   padding-bottom: 1%;
+  background-color: #000000 !important;
+}
+
+.navbar-item {
+  color: white !important;
+}
+
+.navbar-item:hover {
+  color: white !important;
+  background-color: #000000 !important;
 }
 
 #banner-drink {
-    margin-top: 1%;
-    display: flex;
+  margin-top: 1%;
+  display: flex;
 }
-
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
+#cocktail_options {
+  margin-top: 5%;
+
+}
 
 #search_drinks {
   margin-bottom: 35% !important;
+  letter-spacing: .2em !important;
+  padding: .8em 5.65em;
+  border: 1px solid black;
+  font-size: .95em;
 }
 .message-header {
-    background-color: black !important;
+  background-color: #000000 !important;
+}
+.message-header {
+  background-color: black !important;
+  letter-spacing: .2em !important;
+  font-size: .95em;
+  font-weight: 400 !important;
 }
 
-#results {
-    margin-bottom: 4%;
+.message-body {
+  font-size: .9em;
+  letter-spacing: 0.04em !important;
+  line-height: 1.5em;
 }
 
-.fa-utensils {
-    color: black !important;
+.form-title {
+  letter-spacing: .2em !important;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 /* --------------------------------- FOOTER --------------------------------- */
 footer {
-  background-color: black !important;
+  background-color: #000000 !important;
   color: white;
   position: relative !important;
   width: 100%;
@@ -53,18 +76,15 @@ footer {
   margin: 0px !important;
 }
 
-  
-  .footer-copyright {
-    font-size: 12px;
-    font-family: sans-serif;
-  }
-  
-  .footer-icons {
-    color: white;
-  }
-  
-  .footer-icons:hover {
-    color: #FFD211;
-  }
-  
-  
+.footer-copyright {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.footer-icons {
+  color: white;
+}
+
+.footer-icons:hover {
+  color: #ffd211;
+}
