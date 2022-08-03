@@ -1,7 +1,7 @@
 "use strict";
 const favoritesDrinksEL = document.querySelector("#favorite_drinks");
 const favoriteFoodEl = document.querySelector("#favorite_food");
-const apiKey = "b7dd85109d944e18aa81c263b5672588";
+const apiKey = "27d1894e53484dba81f24497d28622f4";
 
 const loadLocalStorageDrink = async function () {
     // saves the string so drink names
@@ -46,7 +46,7 @@ async function makeCardDrink(data, attachingEl) {
         messageEl.className = "message";
         // create message header element and attach to message element
         const messageHeaderEl = document.createElement("div");
-        messageHeaderEl.classList.add("message-header");
+        messageHeaderEl.classList.add("message-header", "is-uppercase");
         // create title for message element and attach to header
         const title = document.createElement("p");
         title.textContent = data.drinks[i].strDrink;
@@ -60,7 +60,7 @@ async function makeCardDrink(data, attachingEl) {
         const imageDivEl = document.createElement("div");
         imageDivEl.classList.add("has-text-centered");
         const figureEl = document.createElement("figure");
-        figureEl.classList.add("image", "is-128x128", "is-inline-block")
+        figureEl.classList.add("image", "is-128x128", "level-left")
         const imageEl = document.createElement("img");
         imageEl.setAttribute("src", data.drinks[i].strDrinkThumb);
         figureEl.appendChild(imageEl);
@@ -70,7 +70,7 @@ async function makeCardDrink(data, attachingEl) {
             // Title
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        ingredientTitle.classList.add("is-size-6", "is-underlined", "is-uppercase", "level-left", "mt-4", "mb-2");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
             // Instructions
@@ -80,7 +80,7 @@ async function makeCardDrink(data, attachingEl) {
             const ingredient = ingredientMeasurementList[0][i];
             const measurement = ingredientMeasurementList[1][i];
             const ingredientMeasurementEl = document.createElement("p")
-            ingredientMeasurementEl.className = "level-item";
+            ingredientMeasurementEl.className = "level-left";
             ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
             ingredientsEl.appendChild(ingredientMeasurementEl);
         }
@@ -89,7 +89,7 @@ async function makeCardDrink(data, attachingEl) {
             // Title
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        instructionTitle.classList.add("is-size-6", "is-underlined", "is-uppercase", "level-left", "mt-2", "mb-2");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
             // Instructions
@@ -108,13 +108,13 @@ async function makeCardDrink(data, attachingEl) {
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
-        buttonEl.classList.add("button", "is-small", "is-danger");
-        buttonEl.textContent = "Delete ";
+        buttonEl.classList.add("button", "removeButton");
+        buttonEl.textContent = "REMOVE";
 
         buttonEl.addEventListener("click", deleteLocalStorageDrink)
         
         const iconEl = document.createElement("i");
-        iconEl.classList.add("fa", "fa-trash");
+  
         buttonEl.appendChild(iconEl);
         paragraphEl.appendChild(buttonEl);
         footerEl.appendChild(paragraphEl);
@@ -201,10 +201,10 @@ async function makeCardFood (data, attachingEl) {
     for (let i = 0; i < data.results.length; i++){
         // Create article element
         const articleEl = document.createElement("article");
-        articleEl.className = "message";
+        articleEl.className = "message", "result-cards";
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div"); 
-        headerEl.classList.add("message-header");
+        headerEl.classList.add("message-header",  "is-uppercase");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
@@ -214,7 +214,7 @@ async function makeCardFood (data, attachingEl) {
         const messageBodyEl = document.createElement("div");
         messageBodyEl.className = "message-body";
         const imageEl = document.createElement("div");
-        imageEl.className = "level-item";
+        imageEl.className = "level-left";
         const image = document.createElement("img");
         image.setAttribute("src", data.results[i].image);
         imageEl.appendChild(image);
@@ -223,7 +223,7 @@ async function makeCardFood (data, attachingEl) {
             // Create and display ingredients
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        ingredientTitle.classList.add("is-size-6", "is-underlined", "is-uppercase", "level-left", "mt-2", "mb-2");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
         const recipeId = data.results[i].id
@@ -232,7 +232,7 @@ async function makeCardFood (data, attachingEl) {
         console.log(ingredients.length);
         for (let i = 0; i < ingredients.length; i ++) {
             const ingredient = document.createElement("p");
-            ingredient.className = "level-item";
+            ingredient.className = "level-left";
             ingredient.textContent = ingredients[i]
             ingredientsEl.append(ingredient);
         }
@@ -240,13 +240,13 @@ async function makeCardFood (data, attachingEl) {
             // Create and display instructions
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        instructionTitle.classList.add("is-size-6", "is-underlined", "is-uppercase", "level-left", "mt-2", "mb-2");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
         const instructions = await getInstructions(recipeId);
         for (let i = 0; i < instructions.length; i++) {
             const step = document.createElement("p");
-            step.classList.add("level-item", "has-text-centered")
+            step.classList.add("level-left")
             step.textContent = `${i+1}. ${instructions[i]}`;
             instructionEl.appendChild(step);
         }
@@ -260,13 +260,13 @@ async function makeCardFood (data, attachingEl) {
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
 
-        buttonEl.classList.add("button", "is-small", "is-danger");
-        buttonEl.textContent = "Delete ";
+        buttonEl.classList.add("button", "removeButton");
+        buttonEl.textContent = "REMOVE";
 
         buttonEl.addEventListener("click", deleteLocalStorageFood)
         
         const iconEl = document.createElement("i");
-        iconEl.classList.add("fa", "fa-trash");
+        // iconEl.classList.add("fa", "fa-trash");
         buttonEl.appendChild(iconEl);
         paragraphEl.appendChild(buttonEl);
         footerEl.appendChild(paragraphEl);

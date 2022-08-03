@@ -1,37 +1,139 @@
 body {
-    position: relative;
-    min-height: 110vh;
-    /* background: url(../assests/images/landingPage.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
-    letter-spacing: .02em;
-  }
+  position: relative;
+  min-height: 100vh;
+  font-family: lato, arial, helvetica;
+}
+/* --------------------------------- HEADER --------------------------------- */
+#logo {
+  color: white !important;
+  font-family: georgia, arial, helvetica;
+  letter-spacing: .03em !important;
+
+}
+
+header {
+margin-bottom: 2% !important;
+}
+
+/* --------------------------------- NAV --------------------------------- */
+nav {
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  background-color: #000000 !important;
+}
+
+.navbar-item {
+  color: white !important;
+  letter-spacing: .2em !important;
+  font-weight: 400;
+  font-size: .95em !important;
+}
+
+.navbar-item:hover {
+  color: white !important;
+  background-color: #000000 !important;
+}
+
+/* ------------------------------ IMAGES/BANNER ----------------------------- */
+#banner-food {
+  margin-top: 1%;
+  display: flex;
+}
+
+
+.block {
+  display: flex !important;
+  flex-direction: row;
+}
+
+/* .lifestyleContainer {
+  margin-left: 17%;
+} */
+/* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
+.message-header {
+  background-color: black !important;
+  color: white !important;
+  letter-spacing: .2em !important;
+  font-weight: 400;
+  font-size: .95em !important;
+  padding-left: 2.75%;
+}
+
+.message-body {
+  font-size: .9em;
+  letter-spacing: 0.04em !important;
+  line-height: 1.5em;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.form-title {
+  letter-spacing: .2em !important;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.result-cards {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+
+.card-footer-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: white !important;
+  padding-top: 2% !important;
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+  padding-bottom: 4% !important;
+}
+
+.ingredientTitle,
+.instructionTitle {
+  font-weight: 400 !important;
+  letter-spacing: .1em !important;
+  text-decoration: underline !important;
+}
+
+.removeButton {
+  border: 1px solid black !important;
+  letter-spacing: .2em !important;
+  padding: .8em 4.75em;
+  border: 1px solid black;
+  font-size: .95em;
+}
+
 
 
 /* --------------------------------- FOOTER --------------------------------- */
 footer {
-    background-color: black !important;
-    color: white;
-    position: absolute !important;
-    width: 100%;
-    bottom: 0 !important;
-    margin: 0px !important;
-  }
-  
-  .footer-copyright {
-    padding-right: 2%;
-    font-size: 12px;
-    font-family: sans-serif;
-  }
-  
-  .footer-icons {
-    color: white;
-  }
-  
-  .footer-icons:hover {
-    color: #FFD211;
-  }
-  
-  
+  background-color: black !important;
+  color: white;
+  position: relative !important;
+  width: 100%;
+  bottom: -10px !important;
+  margin: 0px !important;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.footer-icons {
+  color: white;
+}
+
+.footer-icons:hover {
+  color: #ffd211;
+}

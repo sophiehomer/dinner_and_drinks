@@ -1,6 +1,6 @@
 "use strict";
 const searchFoodBtn = document.querySelector("#search_food");
-const apiKey = "3765c96f2a6f4abe87e454e73004659a";
+const apiKey = "27d1894e53484dba81f24497d28622f4";
 const recipeFoodListEl = document.querySelector("#results")
 
 // Main function 
@@ -90,10 +90,10 @@ async function makeCard(data, attachingEl) {
     for (let i = 0; i < data.results.length; i++) {
         // Create article element
         const articleEl = document.createElement("article");
-        articleEl.classList.add("message");
+        articleEl.classList.add("message", "result-cards");
         // Create header Element, Content, and Append
         const headerEl = document.createElement("div");
-        headerEl.classList.add("message-header");
+        headerEl.classList.add("message-header", "is-uppercase");
         const recipeName = document.createElement("p");
         recipeName.textContent = data.results[i].title;
         headerEl.appendChild(recipeName);
@@ -103,7 +103,7 @@ async function makeCard(data, attachingEl) {
         const messageBodyEl = document.createElement("div");
         messageBodyEl.className = "message-body";
         const imageEl = document.createElement("div");
-        imageEl.className = "level-item";
+        imageEl.className = "level-left";
         const image = document.createElement("img");
         image.setAttribute("src", data.results[i].image);
         imageEl.appendChild(image);
@@ -112,7 +112,7 @@ async function makeCard(data, attachingEl) {
         // Create and display ingredients
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        ingredientTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "ingredientTitle");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
         const recipeId = data.results[i].id
@@ -121,7 +121,7 @@ async function makeCard(data, attachingEl) {
         console.log(ingredients.length);
         for (let i = 0; i < ingredients.length; i++) {
             const ingredient = document.createElement("p");
-            ingredient.className = "level-item";
+            ingredient.className = "level-left";
             ingredient.textContent = ingredients[i]
             ingredientsEl.append(ingredient);
         }
@@ -129,13 +129,13 @@ async function makeCard(data, attachingEl) {
         // Create and display instructions
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-5", "is-underlined", "level-item", "mt-4", "mb-2");
+        instructionTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "instructionTitle");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
         const instructions = await getInstructions(recipeId);
         for (let i = 0; i < instructions.length; i++) {
             const step = document.createElement("p");
-            step.classList.add("level-item", "has-text-centered")
+            step.classList.add("level-left")
             step.textContent = `${i + 1}. ${instructions[i]}`;
             instructionEl.appendChild(step);
         }
@@ -147,13 +147,12 @@ async function makeCard(data, attachingEl) {
         const paragraphEl = document.createElement("p");
         paragraphEl.classList.add("card-footer-item");
         const buttonEl = document.createElement("button");
-        buttonEl.classList.add("button", "is-small", "favorites");
-        buttonEl.textContent = "Add to Favorites ";
+        buttonEl.classList.add("button", "favorites");
+        buttonEl.textContent = "ADD TO FAVORITES";
 
         buttonEl.addEventListener("click", saveLocalStorage)
 
         const iconEl = document.createElement("i");
-        iconEl.classList.add("fas", "fa-star");
         buttonEl.appendChild(iconEl);
         paragraphEl.appendChild(buttonEl);
         footerEl.appendChild(paragraphEl);
