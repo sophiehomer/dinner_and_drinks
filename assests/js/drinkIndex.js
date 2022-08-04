@@ -95,7 +95,7 @@ async function makeCard(data, attachingEl) {
             // Title
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "ingredientTitle");
+        ingredientTitle.classList.add("level-left", "mt-2", "ingredientTitle");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
             // Instructions
@@ -105,7 +105,7 @@ async function makeCard(data, attachingEl) {
             const ingredient = ingredientMeasurementList[0][i];
             const measurement = ingredientMeasurementList[1][i];
             const ingredientMeasurementEl = document.createElement("p")
-            ingredientMeasurementEl.className = "level-left";
+            ingredientMeasurementEl.className = "level-left, ingredients";
             ingredientMeasurementEl.textContent = ingredient + " - " + measurement;
             ingredientsEl.appendChild(ingredientMeasurementEl);
         }
@@ -114,12 +114,13 @@ async function makeCard(data, attachingEl) {
             // Title
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "instructionTitle");
+        instructionTitle.classList.add("level-left", "mt-2", "instructionTitle");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
             // Instructions
         const recipeInstructions = await getInstructions(drinkId);
         const instructions = document.createElement("p");
+        instructions.classList.add("instructions")
         instructions.textContent = recipeInstructions;
         instructionEl.appendChild(instructions)
         messageBodyEl.appendChild(instructionEl);

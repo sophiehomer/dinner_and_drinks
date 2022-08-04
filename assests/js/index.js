@@ -1,6 +1,6 @@
 "use strict";
 const searchFoodBtn = document.querySelector("#search_food");
-const apiKey = "27d1894e53484dba81f24497d28622f4";
+const apiKey = "fd7a545986234b6aaf978dd48cc2d04a";
 const recipeFoodListEl = document.querySelector("#results")
 
 // Main function 
@@ -61,9 +61,11 @@ async function getIngredient(id) {
 async function getInstructions(id) {
     const instructionArray = [];
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`);
+    console.log(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`)
     const data = await response.json();
-    for (let i = 0; i < data[0].steps.length; i++) {
-        instructionArray.push(data[0].steps[i].step);
+    console.log(data, "line 65")
+    for (let i = 0; i < data[0]?.steps.length; i++) {
+        instructionArray.push(data[0]?.steps[i].step);
     }
     return instructionArray;
 }
@@ -112,7 +114,7 @@ async function makeCard(data, attachingEl) {
         // Create and display ingredients
         const ingredientsEl = document.createElement("div");
         const ingredientTitle = document.createElement("h2");
-        ingredientTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "ingredientTitle");
+        ingredientTitle.classList.add("is-uppercase", "level-left", "mt-4", "mb-2", "ingredientTitle");
         ingredientTitle.textContent = "Ingredients";
         ingredientsEl.appendChild(ingredientTitle);
         const recipeId = data.results[i].id
@@ -129,7 +131,7 @@ async function makeCard(data, attachingEl) {
         // Create and display instructions
         const instructionEl = document.createElement("div");
         const instructionTitle = document.createElement("h2");
-        instructionTitle.classList.add("is-size-6", "is-uppercase", "level-left", "mt-2", "mb-2", "instructionTitle");
+        instructionTitle.classList.add("is-uppercase", "level-left", "mt-4", "mb-2", "instructionTitle");
         instructionTitle.textContent = "Instructions";
         instructionEl.appendChild(instructionTitle);
         const instructions = await getInstructions(recipeId);

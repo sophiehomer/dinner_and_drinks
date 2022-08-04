@@ -1,16 +1,16 @@
+/* ----------------- BODY ----------------- */
 body {
   position: relative;
   min-height: 100vh;
   font-family: lato, arial, helvetica;
 }
-/* --------------------------------- HEADER --------------------------------- */
+/* ----------------- HEADER ----------------- */
 #logo {
   color: white !important;
   font-family: georgia, arial, helvetica;
   letter-spacing: .03em !important;
-
 }
-/* --------------------------------- NAV --------------------------------- */
+/* ----------------- NAV ----------------- */
 nav {
   padding-top: 1%;
   padding-left: 5%;
@@ -21,63 +21,83 @@ nav {
 
 .navbar-item {
   color: white !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .15em !important;
   font-weight: 400;
-  font-size: .95em !important;
+  font-size: 16px !important;
 }
 
 .navbar-item:hover {
   color: white !important;
   background-color: #000000 !important;
 }
-
-/* ------------------------------ IMAGES/BANNER ----------------------------- */
+/* ----------------- IMAGES/BANNER ----------------- */
 #banner-food {
   margin-top: 1%;
   display: flex;
 }
-
+/* ----------------- CUISINE AND LIFEFTYLE CONTAINER ----------------- */
+.form-title {
+  letter-spacing: .06em !important;
+  font-size: 24px;
+  color: black !important;
+}
 
 .block {
   display: flex !important;
   flex-direction: row;
 }
 
-/* .lifestyleContainer {
-  margin-left: 17%;
-} */
-/* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
-.message-header {
-  background-color: black !important;
-  color: white !important;
-  letter-spacing: .2em !important;
-  font-weight: 400;
-  font-size: .95em !important;
-  padding-left: 2.75%;
+#food_options {
+  margin-top: 2%;
 }
 
-.message-body {
-  font-size: .9em;
-  letter-spacing: 0.04em !important;
-  line-height: 1.5em;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
+.lifestyleContainer {
+  margin-left: 7%;
 }
-
-.form-title {
-  letter-spacing: .2em !important;
-  font-size: 1em;
-  font-weight: bold;
+/* ----------------- SEARCH BUTTON ----------------- */
+#search_food {
+  margin-top: 2% !important;
+  margin-bottom: 15% !important;
+  letter-spacing: .05em !important;
+  padding: .8em 7em;
+  border: 1px solid black;
+  font-size: 16px !important;
 }
-
+/* ----------------- RECIPES ----------------- */
 .result-cards {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
 }
 
+.message-header {
+  background-color: black !important;
+  color: white !important;
+  letter-spacing: .15em !important;
+  font-weight: 400;
+  font-size: 18px !important;
+  padding-left: 2.75%;
+}
 
+.subtitle {
+  font-size: 16px !important;
+}
+/* ----------------- RECIPE CONTENT ----------------- */
+.message-body {
+  font-size: .9em;
+  /* letter-spacing: 0.04em !important; */
+  line-height: 1.5em;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+.ingredientTitle,
+.instructionTitle {
+  font-weight: 400 !important;
+  letter-spacing: .05em !important;
+  text-decoration: underline !important;
+}
+/* ----------------- ADD TO FAVORITES BUTTON ----------------- */
 .card-footer-item {
   align-items: center;
   display: flex;
@@ -95,39 +115,20 @@ nav {
 
 .favorites {
   border: 1px solid black !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   padding: .8em 4.75em;
   border: 1px solid black;
-  font-size: .95em;
-}
-
-.ingredientTitle,
-.instructionTitle {
-  font-weight: 400 !important;
-  letter-spacing: .1em !important;
-  text-decoration: underline !important;
-}
-
-#food_options {
-  margin-top: 2%;
-}
-
-#search_food {
-  margin-top: 2% !important;
-  margin-bottom: 15% !important;
-  letter-spacing: .2em !important;
-  padding: .8em 4.75em;
-  border: 1px solid black;
-  font-size: .95em;
+  font-size: 14px;
 }
 /* --------------------------------- FOOTER --------------------------------- */
-footer {
+#footer {
   background-color: black !important;
   color: white;
   position: relative !important;
   width: 100%;
-  bottom: -10px !important;
+  bottom: 0px !important;
   margin: 0px !important;
+  padding: 5% !important;
 }
 
 .footer-copyright {

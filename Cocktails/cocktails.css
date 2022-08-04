@@ -1,28 +1,29 @@
+/* ----------------- BODY ----------------- */
 body {
   position: relative;
   min-height: 100vh;
   font-family: lato, arial, helvetica;
 }
-/* --------------------------------- HEADER --------------------------------- */
+/* ----------------- HEADER ----------------- */
 #logo {
   color: white !important;
   font-family: georgia, arial, helvetica;
   letter-spacing: .03em !important;
 }
-
+/* ----------------- NAV ----------------- */
 nav {
   padding-top: 1%;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-bottom: 1%;
   background-color: #000000 !important;
 }
 
 .navbar-item {
   color: white !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .15em !important;
   font-weight: 400;
-  font-size: .95em !important;
+  font-size: 16px !important;
 }
 
 .navbar-item:hover {
@@ -34,50 +35,70 @@ nav {
   margin-top: 1%;
   display: flex;
 }
-/* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
+/* ----------------- LIQUOR ----------------- */
+.form-title {
+  letter-spacing: .06em !important;
+  font-size: 24px;
+  color: black !important;
+}
+
 #cocktail_options {
   margin-top: 5%;
-
 }
 
+.radio {
+  font-size: 16px !important;
+}
+/* ----------------- SEARCH BUTTON ----------------- */
 #search_drinks {
-  margin-bottom: 35% !important;
-  letter-spacing: .2em !important;
-  padding: .8em 4.75em;
+  margin-top: 2% !important;
+  margin-bottom: 15% !important;
+  letter-spacing: .05em !important;
+  padding: .8em 7em;
   border: 1px solid black;
-  font-size: .95em;
+  font-size: 16px !important;
 }
-
-.message-header {
-  background-color: black !important;
-  color: white !important;
-  letter-spacing: .2em !important;
-  font-weight: 400;
-  font-size: .95em !important;
-  padding-left: 2.75%;
-}
-
-.message-body {
-  font-size: .9em;
-  letter-spacing: 0.04em !important;
-  line-height: 1.5em;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-}
-
-.form-title {
-  letter-spacing: .2em !important;
-  font-size: 1em;
-  font-weight: bold;
-}
-
+/* ----------------- RECIPES ----------------- */
 .result-cards {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
 }
+/* ----------------- RECIPE TITLE ----------------- */
+.message-header {
+  background-color: black !important;
+  color: white !important;
+  letter-spacing: .15em !important;
+  font-weight: 400;
+  font-size: 18px !important;
+  padding-left: 2.75%;
+}
 
+.subtitle {
+  font-size: 16px;
+}
+/* ----------------- RECIPE CONTENT ----------------- */
+.message-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.ingredientTitle,
+.instructionTitle {
+  font-weight: 400 !important;
+  letter-spacing: .05em !important;
+  text-decoration: underline !important;
+  font-size: 16px;
+}
+
+.ingredients {
+  font-size: 14px !important;
+}
+
+.instructions {
+  font-size: 14px !important;
+}
 
 .card-footer-item {
   align-items: center;
@@ -93,22 +114,15 @@ nav {
   padding-right: 0% !important;
   padding-bottom: 4% !important;
 }
-
+/* ----------------- ADD TO FAVORITES BUTTON ----------------- */
 .favorites {
   border: 1px solid black !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   padding: .8em 4.75em;
   border: 1px solid black;
-  font-size: .95em;
+  font-size: 14px;
 }
-
-.ingredientTitle,
-.instructionTitle {
-  font-weight: 400 !important;
-  letter-spacing: .1em !important;
-  text-decoration: underline !important;
-}
-/* --------------------------------- FOOTER --------------------------------- */
+/* ----------------- FOOTER ----------------- */
 footer {
   background-color: #000000 !important;
   color: white;

@@ -47,10 +47,6 @@ nav {
   display: flex !important;
   flex-direction: row;
 }
-
-/* .lifestyleContainer {
-  margin-left: 17%;
-} */
 /* ----------------- CUISINE OPTIONS & DIETARY RESTRICTIONS ----------------- */
 .message-header {
   background-color: black !important;
