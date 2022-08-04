@@ -8,13 +8,11 @@ body {
   color: white !important;
   font-family: georgia, arial, helvetica;
   letter-spacing: .03em !important;
-
 }
 
 header {
 margin-bottom: 2% !important;
 }
-
 /* --------------------------------- NAV --------------------------------- */
 nav {
   padding-top: 1%;
@@ -53,7 +51,7 @@ nav {
   color: white !important;
   letter-spacing: .2em !important;
   font-weight: 400;
-  font-size: .95em !important;
+  font-size: 18px !important;
   padding-left: 2.75%;
 }
 
@@ -66,10 +64,12 @@ nav {
   justify-content: flex-start !important;
 }
 
-.form-title {
-  letter-spacing: .2em !important;
-  font-size: 1em;
-  font-weight: bold;
+.ingredientTitle,
+.instructionTitle {
+  font-weight: 400 !important;
+  letter-spacing: .05em !important;
+  text-decoration: underline !important;
+  font-size: 16px;
 }
 
 .result-cards {
@@ -77,7 +77,6 @@ nav {
   flex-direction: column !important;
   justify-content: flex-start !important;
 }
-
 
 .card-footer-item {
   align-items: center;
@@ -94,31 +93,23 @@ nav {
   padding-bottom: 4% !important;
 }
 
-.ingredientTitle,
-.instructionTitle {
-  font-weight: 400 !important;
-  letter-spacing: .1em !important;
-  text-decoration: underline !important;
-}
-
 .removeButton {
   border: 1px solid black !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   padding: .8em 4.75em;
   border: 1px solid black;
-  font-size: .95em;
+  font-size: 14px;
 }
 
-
-
 /* --------------------------------- FOOTER --------------------------------- */
-footer {
+#footer {
   background-color: black !important;
   color: white;
   position: relative !important;
   width: 100%;
   bottom: -10px !important;
   margin: 0px !important;
+  padding: 5%;
 }
 
 .footer-copyright {

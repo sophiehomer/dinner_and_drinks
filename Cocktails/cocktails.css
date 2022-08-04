@@ -123,13 +123,15 @@ nav {
   font-size: 14px;
 }
 /* ----------------- FOOTER ----------------- */
-footer {
+#footer {
   background-color: #000000 !important;
   color: white;
   position: relative !important;
   width: 100%;
   bottom: -10px !important;
   margin: 0px !important;
+  padding: 5% !important;
+
 }
 
 .footer-copyright {
