@@ -1,5 +1,6 @@
 # Dinner&Drinks
- ![markdown logo](/assests/images/app-screen-shot.png)
+<img width="1493" alt="Screen Shot 2022-08-05 at 8 13 39 AM" src="https://user-images.githubusercontent.com/95515946/183107325-8c1c85cc-73b9-4873-a8da-df5549f2e6b3.png">
+
 
  ## Description
  This application uses the Spoonacular API and the Cocktails DB API to deliver curated recipes around user preferences. The user can search up food recipes based on cuisine and dietary restrictions and look up cocktails to make with a specific type of alcohol. The user is able to save their favorite cocktails which will be displayed in the favorite's page. 
@@ -17,4 +18,4 @@ WHEN I click on the favorites button on a recipe
 THEN my recipe is saved on the favorites page. 
 
 ## Link
-https://abarragan89.github.io/dinner-drinks/
+https://sophiehomer.github.io/dinner_and_drinks/
