@@ -10,7 +10,10 @@ const getRecipeTitleAndImage = async function (event) {
     removeAllChildNodes(recipeFoodListEl)
     const cuisine = getCuisine();
     const diet = getLifestyle();
+    console.log(cuisine, "line 13")
+    console.log(diet, "line 14")
     const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${cuisine}&diet=${diet}`
+    console.log(url, "line 16")
     const response = await fetch(url);
     const data = await response.json();
     makeCard(data, recipeFoodListEl);
@@ -44,6 +47,8 @@ function getLifestyle() {
 
 // Get dish's ingredients
 async function getIngredient(id) {
+    console.log(id, "line 47")
+    console.log(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`, "line 48")
     const ingredientArray = [];
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
     const data = await response.json();
@@ -89,6 +94,30 @@ const saveLocalStorage = function (event) {
 
 // Make cards for each dish
 async function makeCard(data, attachingEl) {
+    console.log(data, "line 94")
+    if (data.results.length === 0 ) {
+        console.log("line 99")
+        // Create article element
+        const articleEl = document.createElement("article");
+        articleEl.classList.add("message", "result-cards");
+        // Create header Element, Content, and Append
+        const headerEl = document.createElement("div");
+        headerEl.classList.add("message-header", "is-uppercase");
+        const recipeName = document.createElement("p");
+        recipeName.textContent = "No recipes found"
+        headerEl.appendChild(recipeName);
+        articleEl.appendChild(headerEl);
+        const messageBodyEl = document.createElement("div");
+        messageBodyEl.className = "message-body";
+        articleEl.appendChild(messageBodyEl);
+        const warning = document.createElement("p");
+        warning.textContent = "Sorry, no recipes were found."
+        messageBodyEl.appendChild(warning);
+
+        //append article to element in HTML
+        attachingEl.appendChild(articleEl);
+    }
+
     for (let i = 0; i < data.results.length; i++) {
         // Create article element
         const articleEl = document.createElement("article");
