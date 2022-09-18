@@ -34,22 +34,24 @@ header {
 }
 
 .cocktails {
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   padding: .8em 4.75em;
   background-color: black !important;
   color: white !important;
   border: none;
   font-size: .95em;
+  font-weight: 500 !important;
   margin-bottom: 60% !important;
   margin-left: 4em;
 }
 
 .recipes {
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   padding: .8em 4.75em;
   background-color: black !important;
   color: white !important;
   border: none;
+  font-weight: 500 !important;
   font-size: .95em;
   margin-bottom: 60% !important;
 

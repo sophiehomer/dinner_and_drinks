@@ -24,9 +24,9 @@ nav {
 
 .navbar-item {
   color: white !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   font-weight: 400;
-  font-size: .95em !important;
+  font-size: 18px !important;
 }
 
 .navbar-item:hover {
@@ -49,7 +49,7 @@ nav {
 .message-header {
   background-color: black !important;
   color: white !important;
-  letter-spacing: .2em !important;
+  letter-spacing: .05em !important;
   font-weight: 400;
   font-size: 18px !important;
   padding-left: 2.75%;
