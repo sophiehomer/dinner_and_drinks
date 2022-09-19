@@ -85,7 +85,6 @@ nav {
 /* ----------------- RECIPE CONTENT ----------------- */
 .message-body {
   font-size: .9em;
-  /* letter-spacing: 0.04em !important; */
   line-height: 1.5em;
   display: flex !important;
   flex-direction: column !important;
