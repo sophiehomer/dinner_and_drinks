@@ -13,9 +13,10 @@ body {
 header {
   position: absolute;
   top: 0;
-  background-color: #000000 !important;
+  /* background-color: #000000 !important; */
+  background-color: transparent !important;
   width: 100%;
-  padding: 1% !important;
+  padding: 3% !important;
 }
 
 .logo {
@@ -23,7 +24,7 @@ header {
   letter-spacing: .03em !important;
   font-size: 40px;
   font-family: georgia, arial, helvetica;
-  color: white;
+  color: black;
 }
 /* ----------------- RECIPE & COCKTAILS ----------------- */
 #homepage-main {
@@ -35,7 +36,7 @@ header {
 
 .cocktails {
   letter-spacing: .05em !important;
-  padding: .8em 4.75em;
+  padding: .8em 4.5em;
   background-color: black !important;
   color: white !important;
   border: none;
@@ -47,7 +48,7 @@ header {
 
 .recipes {
   letter-spacing: .05em !important;
-  padding: .8em 4.75em;
+  padding: .8em 4.5em;
   background-color: black !important;
   color: white !important;
   border: none;
@@ -60,11 +61,11 @@ header {
 footer {
   background-color: #000000 !important;
   color: white;
-  position: relative !important;
+  position: absolute !important;
   width: 100%;
   bottom: 0 !important;
   margin: 0px !important;
-  padding: 5% !important;
+  padding: 3% !important;
 }
 
 .footer-copyright {

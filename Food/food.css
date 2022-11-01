@@ -57,7 +57,7 @@ nav {
 /* ----------------- SEARCH BUTTON ----------------- */
 #search_food {
   margin-top: 2% !important;
-  margin-bottom: 15% !important;
+  /* margin-bottom: 15% !important; */
   letter-spacing: .05em !important;
   padding: .8em 7em;
   border: 1px solid black;

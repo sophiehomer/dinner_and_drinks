@@ -52,7 +52,7 @@ nav {
 /* ----------------- SEARCH BUTTON ----------------- */
 #search_drinks {
   margin-top: 2% !important;
-  margin-bottom: 32% !important;
+  /* margin-bottom: 32% !important; */
   letter-spacing: .05em !important;
   padding: .8em 7em;
   border: 1px solid black;
