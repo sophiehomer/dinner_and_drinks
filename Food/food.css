@@ -15,8 +15,8 @@ nav {
   padding-top: 1%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 1%;
-  background-color: #000000 !important;
+  padding-bottom: .5%;
+  background-color: black !important;
 }
 
 .navbar-item {
